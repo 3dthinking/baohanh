@@ -1,0 +1,1339 @@
+
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chính sách bảo hành | 3D Thinking</title>
+<style>
+:root {
+  --blue: #006cb5;
+  --blue-dark: #004f87;
+  --blue-light: #eaf4fb;
+  --green: #18733a;
+  --green-bg: #eaf7ee;
+  --red: #b42318;
+  --red-bg: #fff0ef;
+  --orange: #946200;
+  --orange-bg: #fff7df;
+  --border: #dce6ee;
+  --text: #253746;
+  --muted: #667788;
+  --white: #fff;
+  --shadow: 0 5px 22px rgba(20, 65, 100, .08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--text);
+  background: #f4f7fa;
+  line-height: 1.65;
+}
+
+button, input {
+  font: inherit;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: min(1180px, 94%);
+  margin: 28px auto 50px;
+}
+
+/* HEADER */
+/* 
+.company-header {
+  background: var(--white);
+  border-top: 5px solid var(--blue);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.company-name {
+  margin: 0 0 8px;
+  text-align: center;
+  color: var(--blue);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+.header-subtitle {
+  text-align: center;
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.address-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.address-card {
+  padding: 16px;
+  background: #f8fbfd;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.address-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: 16px;
+}
+
+.address-card p {
+  margin: 5px 0;
+}
+
+.address-card.full {
+  grid-column: 1 / -1;
+}
+
+.hotline {
+  margin-top: 18px;
+  padding: 14px;
+  text-align: center;
+  border-radius: 8px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  font-weight: 800;
+} */
+
+/* TITLE */
+
+.page-title {
+  margin: 28px 0 7px;
+  text-align: center;
+  color: var(--blue-dark);
+  font-size: clamp(23px, 3vw, 32px);
+}
+
+.page-description {
+  margin: 0 0 22px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* STATUS LEGEND */
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.legend-item {
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.legend-covered {
+  color: var(--green);
+  background: var(--green-bg);
+  border: 1px solid #b7dfc3;
+}
+
+.legend-excluded {
+  color: var(--red);
+  background: var(--red-bg);
+  border: 1px solid #f2c3bf;
+}
+
+.legend-limited {
+  color: var(--orange);
+  background: var(--orange-bg);
+  border: 1px solid #ead79c;
+}
+
+/* BRAND TABS */
+
+.brand-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 22px 0 18px;
+}
+
+.brand-tab {
+  flex: 1 1 145px;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid #cbdce9;
+  border-radius: 8px;
+  background: white;
+  color: var(--blue);
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.brand-tab:hover {
+  background: var(--blue-light);
+}
+
+.brand-tab.active {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+  box-shadow: 0 3px 10px rgba(0, 108, 181, .2);
+}
+
+/* SEARCH */
+
+.search-area {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.search-area input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid #ccd9e3;
+  border-radius: 8px;
+  background: white;
+  outline: none;
+}
+
+.search-area input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 108, 181, .1);
+}
+
+.search-area button,
+.action-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: var(--blue);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.search-area button:hover,
+.action-button:hover {
+  background: var(--blue-dark);
+}
+
+/* BRAND PANEL */
+
+.brand-panel {
+  display: none;
+}
+
+.brand-panel.active {
+  display: block;
+}
+
+.policy-heading {
+  margin: 24px 0 12px;
+  padding: 15px 18px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  border-left: 5px solid var(--blue);
+  border-radius: 7px;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.policy-note {
+  margin: 12px 0;
+  padding: 13px 15px;
+  border-radius: 7px;
+  background: #f7f9fb;
+  border: 1px solid var(--border);
+}
+
+/* ACCORDION */
+
+.policy-section {
+  margin: 10px 0;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  box-shadow: 0 2px 7px rgba(20, 65, 100, .025);
+}
+
+.policy-section summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  padding: 15px 17px;
+  cursor: pointer;
+  background: #f7fbfe;
+  color: var(--blue-dark);
+  font-weight: 800;
+}
+
+.policy-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.policy-section summary::after {
+  content: "+";
+  margin-left: auto;
+  color: var(--blue);
+  font-size: 23px;
+  line-height: 1;
+}
+
+.policy-section[open] summary::after {
+  content: "−";
+}
+
+.section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: var(--blue);
+  color: white;
+  font-size: 14px;
+}
+
+.policy-content {
+  padding: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.policy-content p:first-child {
+  margin-top: 0;
+}
+
+.policy-content li {
+  margin: 6px 0;
+}
+
+.policy-content ul {
+  padding-left: 22px;
+}
+
+.policy-content h4 {
+  margin: 18px 0 8px;
+}
+
+.warranty-covered,
+.warranty-not-covered,
+.warranty-limited {
+  margin: 12px 0;
+  padding: 12px 15px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.warranty-covered {
+  color: var(--green);
+  background: var(--green-bg);
+  border-left: 5px solid var(--green);
+}
+
+.warranty-not-covered {
+  color: var(--red);
+  background: var(--red-bg);
+  border-left: 5px solid var(--red);
+}
+
+.warranty-limited {
+  color: var(--orange);
+  background: var(--orange-bg);
+  border-left: 5px solid #d99a00;
+}
+
+.product-card {
+  margin: 14px 0;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+}
+
+.product-card h4 {
+  margin: 0 0 12px;
+  color: var(--blue-dark);
+  font-size: 16px;
+}
+
+.product-card ul {
+  margin: 7px 0;
+}
+
+.product-card .warranty-covered,
+.product-card .warranty-not-covered,
+.product-card .warranty-limited {
+  font-size: 14px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.empty-state {
+  display: none;
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+  background: white;
+  border-radius: 8px;
+}
+
+.contact-footer {
+  margin-top: 28px;
+  padding: 22px;
+  text-align: center;
+  background: #073e68;
+  color: white;
+  border-radius: 10px;
+}
+
+.contact-footer a {
+  color: #d9efff;
+}
+
+.footer-company {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 94%;
+    margin-top: 12px;
+  }
+
+  .company-header {
+    padding: 18px;
+  }
+
+  .address-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .address-card.full {
+    grid-column: auto;
+  }
+
+  .legend {
+    grid-template-columns: 1fr;
+  }
+
+  .search-area {
+    flex-direction: column;
+  }
+
+  .search-area button {
+    width: 100%;
+  }
+
+  .policy-section summary {
+    padding: 13px;
+    font-size: 14px;
+  }
+
+  .policy-content {
+    padding: 14px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .brand-tabs,
+  .search-area,
+  .action-button {
+    display: none;
+  }
+
+  .brand-panel {
+    display: block !important;
+  }
+
+  details > * {
+    display: block !important;
+  }
+
+  .policy-section {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}
+
+.policy-table{width:100%;border-collapse:collapse;margin:10px 0 22px;font-size:.93rem}.policy-table th,.policy-table td{border:1px solid #d8e0e8;padding:9px 10px;text-align:left;vertical-align:top}.policy-table th{background:#eef4f8}.table-wrap{width:100%;overflow-x:auto}.policy-content ol{padding-left:22px}.brand-panel h4{margin:18px 0 8px}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- <header class="company-header">
+    <h1 class="company-name">CÔNG TY TNHH 3D THINKING</h1>
+    <p class="header-subtitle">Trung tâm thông tin chính sách bảo hành sản phẩm</p>
+
+    <div class="address-grid">
+      <section class="address-card full">
+        <h3>Trụ sở chính</h3>
+        <p>Số 2 ngách 858/15 đường Kim Giang, Thôn Vực, Phường Thanh Liệt, TP Hà Nội, Việt Nam</p>
+      </section>
+
+      <section class="address-card">
+        <h3>Cơ sở 1 – TP Hà Nội</h3>
+        <p>946 Đ. Quang Trung, Yên Nghĩa, Quận Hà Đông, TP Hà Nội</p>
+        <p><strong>Tổng đài:</strong> <a href="tel:19007451">19007451</a></p>
+      </section>
+
+      <section class="address-card">
+        <h3>Cơ sở 2 – TP Hồ Chí Minh</h3>
+        <p>Số 9, Đường D20, Khu Phố 6, Phường Phước Long B, TP Thủ Đức, TP Hồ Chí Minh</p>
+        <p><strong>Tổng đài:</strong> <a href="tel:19007451">19007451</a></p>
+      </section>
+    </div>
+
+    <div class="hotline">
+      HOTLINE HỖ TRỢ KĨ THUẬT:
+      <a href="tel:19007451">19007451 (NHÁNH 2)</a>
+      &nbsp; | &nbsp;
+      <a href="mailto:info@3dthinking.vn">info@3dthinking.vn</a>
+    </div>
+  </header> -->
+<h2 class="page-title">CHÍNH SÁCH BẢO HÀNH</h2>
+<p class="page-description">
+    Chọn thương hiệu và mở từng đầu mục để xem chính sách bảo hành.
+  </p>
+<div class="legend">
+<div class="legend-item legend-covered">ĐƯỢC BẢO HÀNH</div>
+<div class="legend-item legend-excluded">KHÔNG ĐƯỢC BẢO HÀNH</div>
+<div class="legend-item legend-limited">BẢO HÀNH GIỚI HẠN 3–6 THÁNG</div>
+</div>
+<nav aria-label="Chọn thương hiệu" class="brand-tabs">
+<button class="brand-tab active" data-brand="xtool">xTool</button>
+<button class="brand-tab" data-brand="bambu">Bambu Lab</button>
+<button class="brand-tab" data-brand="creality">Creality</button>
+<button class="brand-tab" data-brand="anycubic">Anycubic</button>
+<button class="brand-tab" data-brand="phrozen">Phrozen</button>
+</nav>
+<div class="search-area">
+<input aria-label="Tìm nội dung chính sách" id="policySearch" placeholder="Tìm linh kiện, model máy hoặc nội dung bảo hành..." type="search"/>
+<button id="clearSearch" type="button">Xóa tìm kiếm</button>
+</div>
+<div class="empty-state" id="emptyState">
+    Không tìm thấy nội dung phù hợp. Vui lòng thử từ khóa khác.
+  </div>
+<!-- =====================================================
+       TAB 1: XTOOL
+       ===================================================== -->
+<section class="brand-panel active" id="panel-xtool">
+<div class="policy-note">
+<strong>Chính sách bảo hành xTool – 3D Thinking</strong><br/>
+      Ngày hiệu lực: 10/10/2026 | Phiên bản: 01<br/>
+<a href="https://3dthinking.vn/chinh-sach-bao-hanh-xtool-3d-thinking/" rel="noopener" target="_blank">Xem chính sách xTool trên website chính thức</a>
+</div>
+<h3 class="policy-heading">PHẦN I – CHÍNH SÁCH VÀ QUY TRÌNH BẢO HÀNH</h3>
+<details class="policy-section">
+<summary><span class="section-number">1</span> Phạm vi áp dụng</summary>
+<div class="policy-content">
+<p>Áp dụng cho khách hàng mua sản phẩm xTool do 3D Thinking phân phối tại Việt Nam, gồm máy khắc/cắt laser, laser UV/fiber, máy in, máy ép nhiệt, phụ kiện và các sản phẩm liên quan.</p>
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Sản phẩm thuộc phạm vi phân phối của 3D Thinking, có chứng từ mua hàng hợp lệ và số serial phù hợp.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH THEO CHÍNH SÁCH NÀY: Hàng do đơn vị khác phân phối, hàng bán lại, hàng nội địa, hàng xách tay, hàng mua ở nước ngoài hoặc qua kênh không được ủy quyền.</div>
+<ul>
+<li>Không áp dụng bảo hành xuyên khu vực đối với sản phẩm không thuộc hệ thống phân phối của 3D Thinking.</li>
+<li>Dịch vụ sửa chữa và vận chuyển đối với sản phẩm ngoài phạm vi có thể tính phí.</li>
+<li>Khách hàng cần giữ hóa đơn, chứng từ mua hàng và thông tin số serial.</li>
+<li>Thỏa thuận hậu mãi riêng được ưu tiên áp dụng nếu có.</li>
+<li>Chính sách không làm giảm quyền của khách hàng theo pháp luật Việt Nam; nếu pháp luật quy định thời hạn dài hơn thì áp dụng thời hạn dài hơn.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">2</span> Thời hạn bảo hành</summary>
+<div class="policy-content">
+<p>Thời hạn bảo hành được tính từ ngày khách hàng nhận sản phẩm, căn cứ chứng từ mua hàng hợp lệ. Trường hợp không có hóa đơn hợp lệ, thời hạn có thể được xác định theo ngày xuất xưởng của sản phẩm.</p>
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Linh kiện chính và phụ kiện xTool thuộc danh mục được bảo hành.</div>
+<div class="warranty-limited">BẢO HÀNH GIỚI HẠN – 6 THÁNG: Máy tân trang (không áp dụng cho ngoại quan); ống laser CO₂ của P2/P3; lưới lọc và bộ giảm thanh bơm khí của P3.</div>
+<div class="warranty-limited">BẢO HÀNH GIỚI HẠN – 6 THÁNG: Đầu in Apparel Printer, tối đa một lần thay thế theo chính sách.</div>
+<div class="warranty-limited">BẢO HÀNH GIỚI HẠN – 3 THÁNG: Đầu in O1 Omni Printer, một lần thay thế theo chính sách; bút cảm ứng kiosk áp dụng thời hạn riêng 3 tháng.</div>
+<div class="warranty-covered">MÔ-ĐUN LASER MÁY HÀN LASER: Thay miễn phí một lần trong 12 tháng theo điều kiện của chính sách.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Bao bì, sách hướng dẫn, quà tặng, vật tư tiêu hao, vật liệu và các phụ kiện được liệt kê là không bảo hành. Nếu hỏng/lỗi ngay khi nhận hoặc trong lần sử dụng đầu tiên, có thể được thay miễn phí theo điều kiện chính sách.</div>
+<ul>
+<li>Thay linh kiện không làm bắt đầu lại thời hạn bảo hành.</li>
+<li>Thời gian máy nằm tại trung tâm bảo hành được cộng thêm vào thời hạn bảo hành.</li>
+<li>Sản phẩm ngừng sản xuất áp dụng theo thời điểm kết thúc bảo trì cuối cùng do hãng công bố.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">3</span> Điều kiện được bảo hành</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH KHI ĐÁP ỨNG ĐẦY ĐỦ CÁC ĐIỀU KIỆN:</div>
+<ul>
+<li>Sản phẩm còn thời hạn bảo hành.</li>
+<li>Lỗi do chất lượng hoặc sản xuất trong điều kiện sử dụng bình thường.</li>
+<li>Có chứng từ mua hàng hợp lệ và số serial của sản phẩm.</li>
+<li>Tem, nhãn và dấu hiệu nhận dạng gốc còn nguyên vẹn.</li>
+<li>Sản phẩm được lắp đặt, sử dụng, bảo dưỡng và bảo quản theo hướng dẫn của nhà sản xuất.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">4</span> Hình thức bảo hành</summary>
+<div class="policy-content">
+<ul>
+<li>Ưu tiên kiểm tra và xử lý trực tuyến/từ xa; nếu không giải quyết được, khách hàng mang hoặc gửi máy đến trung tâm bảo hành.</li>
+<li>3D Thinking sửa chữa hoặc thay linh kiện lỗi bằng linh kiện mới hoặc linh kiện tân trang đạt tiêu chuẩn của hãng.</li>
+</ul>
+<div class="warranty-covered">LỖI NHÀ SẢN XUẤT TRONG THỜI HẠN BẢO HÀNH: Miễn phí linh kiện và công sửa chữa tại trung tâm.</div>
+<div class="warranty-not-covered">KHÔNG ĐỔI NGUYÊN MÁY 1-1 theo nguyên tắc chung. Ngoại lệ có thể áp dụng với mô-đun laser xTool F1/F2/F2 Ultra không thể sửa hoặc thay riêng, nếu hãng chấp thuận đổi máy.</div>
+<div class="warranty-limited">LỖI DO NGƯỜI DÙNG HOẶC NGOÀI BẢO HÀNH: Có tính phí. Công ty báo giá trước và chỉ tiến hành khi khách hàng đồng ý.</div>
+<ul>
+<li>Trong trường hợp phù hợp, kỹ thuật có thể gửi linh kiện để khách tự lắp đặt theo hướng dẫn.</li>
+<li>Dịch vụ tại nhà theo yêu cầu có thể tính phí di chuyển/dịch vụ; chi phí được báo trước.</li>
+<li>Nếu kiểm tra không phát hiện lỗi, khách hàng chịu chi phí vận chuyển và có thể chịu phí kiểm tra đã được thông báo trước.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">5</span> Hư hỏng khi nhận hàng, giao nhầm và không nhận được hàng</summary>
+<div class="policy-content">
+<div class="warranty-covered">HƯ HỎNG KHI NHẬN HÀNG: Quay video mở hộp và thông báo trong vòng 7 ngày kể từ khi nhận. Nếu có thể, từ chối kiện hàng hoặc đề nghị đơn vị vận chuyển xác nhận hư hỏng.</div>
+<ul>
+<li>3D Thinking kiểm tra và sửa chữa/thay linh kiện lỗi miễn phí nếu đáp ứng điều kiện.</li>
+<li>Phụ kiện, vật tư hoặc quà tặng bị lỗi ngay khi nhận có thể được thay miễn phí theo chính sách.</li>
+<li>Giao nhầm sản phẩm: thông báo trong 7 ngày; sản phẩm chưa sử dụng, đủ phụ kiện và còn bao bì gốc.</li>
+<li>Không nhận được hàng: thông báo trong vòng 30 ngày kể từ ngày gửi hàng.</li>
+</ul>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Khiếu nại hư hỏng vận chuyển sau 7 ngày nếu không có video mở hộp hoặc xác nhận của đơn vị vận chuyển theo điều kiện chính sách.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">6</span> Các trường hợp không được bảo hành</summary>
+<div class="policy-content">
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH TRONG CÁC TRƯỜNG HỢP SAU:</div>
+<ul>
+<li>Sản phẩm đã hết thời hạn bảo hành.</li>
+<li>Sản phẩm không thuộc kênh phân phối được ủy quyền hoặc không có chứng từ hợp lệ.</li>
+<li>Phai màu, hao mòn tự nhiên, vật tư tiêu hao hoặc hư hỏng ngoại quan không ảnh hưởng chức năng.</li>
+<li>Sử dụng, lắp đặt, bảo quản hoặc bảo dưỡng không đúng hướng dẫn.</li>
+<li>Sử dụng sai mục đích, thao tác sai, cắm/rút thiết bị ngoại vi không đúng cách.</li>
+<li>Rơi, va đập, biến dạng cơ học, nhiệt độ không phù hợp, nước, dung môi, axit, kiềm hoặc chất lỏng.</li>
+<li>Hư hỏng do côn trùng, chuột, vật lạ, bụi, vỏ máy, dây hoặc linh kiện bị tác động.</li>
+<li>Tự ý tháo máy, sửa chữa, thay đổi kết cấu hoặc sửa tại đơn vị không được ủy quyền.</li>
+<li>Tem, số serial, mã nhận dạng hoặc chứng từ bị sửa đổi, tẩy xóa hoặc không hợp lệ.</li>
+<li>Sử dụng phần mềm không bản quyền, firmware/phần mềm không chính thức hoặc linh kiện bên thứ ba gây lỗi tương thích.</li>
+<li>Virus, tấn công mạng, hỏa hoạn, lũ lụt, bão, sét đánh hoặc các trường hợp bất khả kháng.</li>
+<li>Hư hỏng trong quá trình khách hàng vận chuyển sản phẩm về sửa chữa do đóng gói không đúng cách.</li>
+<li>Tiếp tục vận hành khi máy có khói, tiếng kêu lạ, mùi khét hoặc dấu hiệu mất an toàn.</li>
+</ul>
+<p>Trong phạm vi pháp luật cho phép, các thiệt hại gián tiếp/hệ quả như mất lợi nhuận, dữ liệu hoặc gián đoạn kinh doanh không thuộc phạm vi trách nhiệm bảo hành.</p>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">7</span> Quy định riêng đối với sản phẩm laser</summary>
+<div class="policy-content">
+<div class="warranty-covered">ỐNG LASER CO₂ P2/P3: Trường hợp vỡ ngay khi mở hộp hoặc không phát tia mà không có hư hỏng nhìn thấy được trong thời hạn bảo hành sẽ được xem xét theo chính sách.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Vỡ do tác động bên ngoài, vận chuyển, thao tác sai hoặc nước đóng băng; công suất giảm tự nhiên không được xem là lỗi sản xuất.</div>
+<ul>
+<li>Sử dụng dung dịch chống đông đúng khuyến nghị nếu cần.</li>
+<li>Giữ sạch đầu laser, thấu kính và gương.</li>
+<li>Đảm bảo hệ thống hút khói và thông gió hoạt động đúng.</li>
+<li>Không để máy chạy khi không có người giám sát.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">8</span> Quy trình bảo hành 6 bước</summary>
+<div class="policy-content">
+<ol>
+<li><strong>Liên hệ trước:</strong> Liên hệ 3D Thinking để được hướng dẫn; không tự tháo hoặc sửa máy khi chưa được hướng dẫn.</li>
+<li><strong>Cung cấp thông tin:</strong> Hóa đơn/chứng từ, số serial, mô tả lỗi, hình ảnh, video hoặc file log nếu có.</li>
+<li><strong>Đóng gói:</strong> Dùng thùng và vật liệu chèn gốc. Hư hỏng do đóng gói không đúng cách và vật liệu thay thế có thể do khách hàng chịu phí.</li>
+<li><strong>Tiếp nhận:</strong> Bảo hành bắt đầu khi công ty nhận và kiểm tra sản phẩm thực tế; mã vận đơn không phải bằng chứng đã nhận hàng.</li>
+<li><strong>Xử lý:</strong> Lỗi cơ bản được xử lý ngay; lỗi phức tạp có thể cần giữ máy để kiểm tra và làm việc với hãng xTool.</li>
+<li><strong>Trả máy:</strong> Gửi qua Viettel Post hoặc nhận tại trung tâm; chi phí vận chuyển do khách hàng thanh toán theo chính sách.</li>
+</ol>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">9</span> Sử dụng, bảo dưỡng và an toàn</summary>
+<div class="policy-content">
+<ul>
+<li>Vận hành, bảo dưỡng và bảo quản theo hướng dẫn chính thức.</li>
+<li>Vệ sinh, bảo dưỡng định kỳ; dùng linh kiện, vật tư xTool chính hãng và phần mềm được cấp phép.</li>
+<li>Khi có dấu hiệu mất an toàn, ngắt nguồn điện ngay và liên hệ kỹ thuật.</li>
+<li>Không tự xử lý hoặc sửa chữa máy khi chưa được hướng dẫn.</li>
+<li>Trước khi gửi máy bảo hành, xóa dữ liệu cá nhân và hủy liên kết tài khoản với thiết bị nếu có.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">10</span> Địa điểm bảo hành và liên hệ</summary>
+<div class="policy-content">
+<p><strong>Cơ sở Hà Nội:</strong> Số 946 Quang Trung, tổ dân phố 17, phường Yên Nghĩa, quận Hà Đông, TP Hà Nội.</p>
+<p><strong>Cơ sở TP.HCM:</strong> Số 9, Đường D20, Khu phố 6, phường Phước Long B, TP Thủ Đức, TP Hồ Chí Minh.</p>
+<p><strong>Tổng đài:</strong> <a href="tel:19007451">19007451</a></p>
+<p><strong>Hỗ trợ kỹ thuật:</strong> <a href="tel:19007451">19007451 (Nhánh 2)</a></p>
+<p><strong>Email:</strong> <a href="mailto:info@3dthinking.vn">info@3dthinking.vn</a></p>
+<p><strong>Website:</strong> <a href="https://3dthinking.vn/" rel="noopener" target="_blank">3dthinking.vn</a></p>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">11</span> Thời gian hỗ trợ</summary>
+<div class="policy-content">
+<ul>
+<li>Thứ Hai đến Thứ Bảy: 8h00–17h00.</li>
+<li>Ngoài giờ hành chính: 18h00–21h00; phản hồi có thể chậm hơn.</li>
+<li>Ngừng tiếp nhận yêu cầu hỗ trợ vào Chủ nhật hằng tuần.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">12</span> Khuyến nghị đào tạo sử dụng máy</summary>
+<div class="policy-content">
+<p>Để hạn chế lỗi vận hành và hư hỏng không mong muốn, khách hàng được khuyến nghị tham gia khóa đào tạo sử dụng máy tương ứng.</p>
+<p><a href="https://3dthinking.vn/khoa-hoc/" rel="noopener" target="_blank">Xem các khóa đào tạo tại 3D Thinking</a></p>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">13</span> Điều khoản chung</summary>
+<div class="policy-content">
+<ul>
+<li>3D Thinking có thể điều chỉnh chính sách theo thay đổi của nhà sản xuất hoặc hoạt động công ty.</li>
+<li>Nội dung thay đổi được công bố trên website ít nhất 14 ngày trước khi có hiệu lực, kèm ngày hiệu lực mới.</li>
+<li>Trong phạm vi pháp luật cho phép, 3D Thinking giữ quyền giải thích cuối cùng đối với chính sách.</li>
+</ul>
+<p><strong>Xin trân trọng cảm ơn quý khách hàng!</strong></p>
+</div>
+</details>
+<h3 class="policy-heading">PHẦN II – DANH MỤC SẢN PHẨM VÀ LINH KIỆN XTOOL</h3>
+<div class="policy-note">
+<strong>Chú ý:</strong> Phân loại dưới đây là hướng dẫn tra cứu nhanh. Khi xác định linh kiện cụ thể, cần đối chiếu danh mục đầy đủ và điều kiện tại trang chính sách chính thức.
+    </div>
+<details class="policy-section">
+<summary><span class="section-number">1</span> xTool F1</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng. Máy tân trang – 6 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, vật liệu, tua vít, bộ dụng cụ và mỡ bôi trơn. Phụ kiện hỏng khi nhận có thể được đổi theo điều kiện chính sách.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">2</span> xTool F2</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, vật liệu, tua vít, bộ dụng cụ và mỡ bôi trơn; ngoại lệ khi hỏng ngay lúc nhận áp dụng theo điều kiện chính sách.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">3</span> xTool F2 Ultra UV</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Linh kiện chính, bao gồm camera, mô-đun galvo và laser UV.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, vật liệu, tua vít, bộ dụng cụ và mỡ bôi trơn.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">4</span> xTool P2</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng; máy tân trang – 6 tháng.</div>
+<div class="warranty-limited">BẢO HÀNH 6 THÁNG: Ống laser CO₂.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, vật liệu, tua vít, bộ dụng cụ và mỡ bôi trơn.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">5</span> xTool P3</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng; máy tân trang – 6 tháng.</div>
+<div class="warranty-limited">BẢO HÀNH 6 THÁNG: Ống laser CO₂, lưới lọc và bộ giảm thanh bơm khí.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, thanh đỡ phôi, vật liệu, tua vít, bộ dụng cụ, phễu, ốc vít dự phòng, băng dính giấy và dung dịch chống đông.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">6</span> xTool M1</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, vật liệu, tua vít, bộ dụng cụ, mỡ, mô-đun hút khói, mô-đun dao cắt, hộp mực và bộ lọc sơ cấp.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">7</span> xTool M2</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Linh kiện chính như đầu laser, camera, động cơ, cảm biến giới hạn và bo mạch chính.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, tua vít, vật tư tiêu hao, bộ dụng cụ, giấy A3, kính bảo vệ đầu laser và ốc vít dự phòng.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">8</span> xTool S1</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Kính bảo vệ, sách hướng dẫn, vật liệu, tua vít, bộ dụng cụ và mỡ bôi trơn.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">9</span> xTool D1 / D1 Pro</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, vật liệu, tua vít, bộ dụng cụ và mỡ bôi trơn.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">10</span> xTool Retail Marker</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Các bộ phận chính như cụm laser, bo mạch chính, camera và động cơ.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, vật liệu, tua vít, bộ dụng cụ và mỡ bôi trơn.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">11</span> xTool Laser Welder – Máy hàn laser</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Linh kiện chính như màn hình, dây cáp, chìa khóa và PCB.</div>
+<div class="warranty-limited">MÔ-ĐUN LASER: Thay miễn phí một lần trong 12 tháng theo điều kiện chính sách.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Hướng dẫn nhanh, hướng dẫn an toàn, găng tay, tăm bông và thấu kính thuộc nhóm loại trừ.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">12</span> xTool CNC Cutter</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: PCB, bộ nguồn, quạt hút/làm mát, cảm biến giới hạn, dây cáp, USB, động cơ, camera, đèn, khóa an toàn và dây đai.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Thanh đỡ, tấm đế, bộ phận kết cấu, vòi phun, tua vít, tài liệu hướng dẫn nhanh và hướng dẫn an toàn. Một số phụ kiện lỗi ngay khi nhận được xem xét thay thế theo chính sách.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">13</span> xTool Apparel Printer – Máy in quần áo</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Linh kiện chính, không bao gồm đầu in.</div>
+<div class="warranty-limited">ĐẦU IN GỐC: 6 tháng, tối đa một lần thay thế theo chính sách.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Mực, dung dịch giữ ẩm, film, bộ lọc, dao gạt mực, pad, damper và lưỡi cắt.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">14</span> xTool O1 Omni Printer</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Linh kiện chính, không bao gồm đầu in.</div>
+<div class="warranty-limited">ĐẦU IN GỐC: 3 tháng, một lần thay thế theo điều kiện chính sách.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Mực, dung dịch giữ ẩm, hộp mực thải, bơm, bộ chiết, dao gạt mực, pad, mút thấm, bộ lọc, thảm dính, nam châm tủ lạnh, dầu bôi trơn, găng tay nitrile, tăm bông, dung dịch tiền xử lý mực trắng và film DTF.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">15</span> OR1 – Bộ xoay cho O1</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">16</span> LM1 Laminator và RF1 Roll Feeder</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Dao cắt giấy và film A/B.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">17</span> OS1 Automatic Shaker Oven</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Cụm máy chính – 12 tháng, ngoại trừ các vật tư/linh kiện được liệt kê không bảo hành.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Bột và các vật tư tiêu hao thuộc danh mục loại trừ.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">18</span> xTool Screen Printer</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, khung lưới, mực gốc nước, thảm cắt, vật liệu và bảng từ.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">19</span> Heat Press Machines – Máy ép nhiệt</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Thảm ép thông minh và sách hướng dẫn; trường hợp hỏng khi nhận được xem xét theo điều kiện đổi phụ kiện.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">20</span> WonderPress</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Bộ nguồn chuyển mạch, bo điều khiển chính, động cơ trục xuyên và các linh kiện chính thuộc danh mục.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, tấm cách nhiệt, vật tư tiêu hao, bộ dụng cụ và ốc vít dự phòng.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">21</span> Smoke Purifier – Máy lọc khói</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, bộ lọc và ống xả khói.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">22</span> Inline Duct Fan – Quạt hút đường ống</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn và ống xả khói.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">23</span> Smart Air Assist</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, ống dẫn và bộ lọc thuộc danh mục loại trừ.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">24</span> Air Compressor &amp; Air Dryer</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Cụm máy chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Bộ giảm thanh, đầu nối, ống dẫn và sách hướng dẫn.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">25</span> Fire Safety Set – Bộ an toàn cháy</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Bình khí CO₂, ống dẫn, băng dính 3M và sách hướng dẫn. Phụ kiện hỏng ngay khi nhận có thể được xem xét thay thế theo điều kiện chính sách.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">26</span> Rotary Attachment – Các dòng bộ xoay</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, tua vít, thước cân mini, thước dây, ngàm và các chi tiết chốt thuộc danh mục loại trừ.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">27</span> F1 Slide Extension</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, tua vít, tấm lưỡi dao, thước di động và kẹp.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">28</span> F1 Ultra Conveyor</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, dây băng tải và giấy.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">29</span> Automatic Conveyor Feeder</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">30</span> Riser Base – Đế nâng</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Linh kiện chính – 12 tháng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, tua vít, dải chắn sáng và khóa lục giác.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">31</span> Electrostatic Mat – Thảm tĩnh điện</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Cụm thảm tĩnh điện chính.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Tấm bảo vệ tĩnh điện.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">32</span> Hot Foil Pen – Bút ép nhũ</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Thân bút và các đầu bút loại đậm, thường và mảnh theo danh mục.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Giấy nhũ.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">33</span> Self-service Kiosk – Kiosk tự phục vụ</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH – 12 THÁNG: Màn hình, pin và bo mạch chủ thuộc danh mục linh kiện chính.</div>
+<div class="warranty-limited">BẢO HÀNH 3 THÁNG: Bút cảm ứng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Sách hướng dẫn, tua vít và đầu bút cảm ứng; lỗi ngay khi nhận được xem xét theo điều kiện chính sách.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">34</span> Retail Accessories – Phụ kiện bán lẻ</summary>
+<div class="policy-content">
+<div class="warranty-covered">LINH KIỆN BÊN TRONG MÁY: Áp dụng chính sách của dòng sản phẩm tương ứng.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Các phụ kiện khác thuộc danh mục loại trừ; phụ kiện hỏng ngay khi nhận có thể được xem xét thay thế theo điều kiện chính sách.</div>
+</div>
+</details>
+<p class="muted">
+      Nội dung chi tiết xTool:
+      <a href="https://3dthinking.vn/chinh-sach-bao-hanh-xtool-3d-thinking/" rel="noopener" target="_blank">trang chính sách chính thức</a>.
+    </p>
+</section>
+<!-- =====================================================
+       TAB 2: BAMBU LAB
+       ===================================================== -->
+<section class="brand-panel" id="panel-bambu">
+<div class="policy-note">
+<strong>Chính sách bảo hành Bambu Lab – 3D Thinking</strong><br/>
+      Ngày hiệu lực: 10/10/2026 | Phiên bản: 01<br/>
+<a href="https://3dthinking.vn/chinh-sach-bao-hanh-bambu-lab-3d-thinking/" rel="noopener" target="_blank">Xem chính sách Bambu Lab trên website chính thức</a>
+</div>
+<h3 class="policy-heading">PHẦN I – CHÍNH SÁCH VÀ QUY TRÌNH BẢO HÀNH</h3>
+<details class="policy-section">
+<summary><span class="section-number">1</span> Phạm vi áp dụng</summary>
+<div class="policy-content">
+<p>Áp dụng cho khách hàng cá nhân và doanh nghiệp mua sản phẩm Bambu Lab do 3D Thinking phân phối, bao gồm máy in 3D, máy laser, AMS, mô-đun và phụ kiện qua showroom hoặc kênh trực tuyến của 3D Thinking tại Việt Nam.</p>
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH: Sản phẩm thuộc hệ thống phân phối của 3D Thinking, có hóa đơn, phiếu bán hàng hoặc thông tin bảo hành do công ty phát hành.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH THEO CHÍNH SÁCH NÀY: Hàng do đơn vị khác phân phối, phiên bản nội địa Trung Quốc, hàng xách tay, hàng mua ở nước ngoài hoặc qua kênh không chính thức.</div>
+<ul>
+<li>3D Thinking không bảo hành xuyên khu vực cho sản phẩm ngoài phạm vi phân phối; dịch vụ có thể tính đầy đủ phí sửa chữa và vận chuyển.</li>
+<li>Máy Bambu Lab có giới hạn sử dụng theo khu vực. Máy khác khu vực có thể không liên kết được tài khoản hoặc sử dụng một số tính năng cloud, in từ xa và xem camera ngoài mạng nội bộ.</li>
+<li>Chính sách không làm giảm quyền lợi theo pháp luật Việt Nam. Nếu pháp luật quy định thời hạn dài hơn thì áp dụng thời hạn dài hơn.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">2</span> Thời hạn bảo hành và phân loại linh kiện</summary>
+<div class="policy-content">
+<p>Thời hạn được tính từ ngày khách hàng nhận sản phẩm. Danh sách chi tiết theo từng dòng máy được nêu ở Phần II.</p>
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH TIÊU CHUẨN – 12 THÁNG: Tất cả máy in 3D Bambu Lab; AMS, AMS lite, AMS 2 Pro, AMS HT; Laser Module 10W/40W, Cutting Module và máy laser Bambu Lab R1.</div>
+<div class="warranty-limited">BẢO HÀNH GIỚI HẠN – 3 HOẶC 6 THÁNG: Một số linh kiện cụ thể như cụm ống laser, cụm bộ đùn, bộ cấp sợi, gương và thấu kính theo danh mục của từng sản phẩm.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Linh kiện tiêu hao như Hotend, Nozzle, Build Plate, PTFE Tube, bộ lọc, gói hút ẩm và vật tư tương tự trong điều kiện sử dụng thông thường.</div>
+<p>Nếu linh kiện tiêu hao hỏng do lỗi sản xuất khi máy vẫn còn thời hạn bảo hành, 3D Thinking sẽ xem xét thay thế sau khi kiểm tra. Quyết định được thực hiện theo chính sách của công ty.</p>
+<ul>
+<li>Thay linh kiện không làm bắt đầu lại thời hạn bảo hành.</li>
+<li>Thời gian sản phẩm nằm trong quá trình bảo hành được cộng thêm vào thời hạn.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">3</span> Điều kiện được bảo hành</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH KHI ĐÁP ỨNG ĐẦY ĐỦ CÁC ĐIỀU KIỆN:</div>
+<ul>
+<li>Còn thời hạn bảo hành của sản phẩm hoặc linh kiện liên quan.</li>
+<li>Lỗi do nhà sản xuất, lỗi lắp ráp hoặc phát sinh trong quá trình sử dụng bình thường mà không do khách hàng gây ra.</li>
+<li>Có chứng từ mua hàng hợp lệ của 3D Thinking.</li>
+<li>Tem, nhãn, số serial và tem bảo hành còn nguyên vẹn.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">4</span> Hình thức bảo hành</summary>
+<div class="policy-content">
+<p>3D Thinking bảo hành bằng hình thức sửa chữa sản phẩm hoặc thay thế linh kiện bị lỗi.</p>
+<div class="warranty-covered">LỖI NHÀ SẢN XUẤT TRONG THỜI HẠN BẢO HÀNH: Miễn phí linh kiện và công sửa chữa.</div>
+<div class="warranty-not-covered">KHÔNG ÁP DỤNG ĐỔI MỚI NGUYÊN MÁY 1-1 theo nguyên tắc chung.</div>
+<div class="warranty-limited">HƯ HỎNG DO NGƯỜI DÙNG HOẶC NGOÀI PHẠM VI BẢO HÀNH: Có tính phí. Công ty báo chi phí trước và chỉ tiến hành khi khách hàng đồng ý.</div>
+<ul>
+<li>Trong trường hợp phù hợp, linh kiện thay thế có thể được gửi để khách tự lắp theo hướng dẫn của kỹ thuật.</li>
+<li>Nếu kiểm tra không phát hiện lỗi, khách hàng chịu chi phí vận chuyển và có thể chịu phí kiểm tra đã được thông báo trước.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">5</span> Hư hỏng khi nhận hàng, giao nhầm và không nhận được hàng</summary>
+<div class="policy-content">
+<div class="warranty-covered">HƯ HỎNG KHI NHẬN HÀNG: Quay video mở hộp và thông báo trong vòng 7 ngày kể từ ngày nhận. Nếu có thể, từ chối kiện hàng hoặc đề nghị đơn vị vận chuyển xác nhận hư hỏng.</div>
+<ul>
+<li>3D Thinking kiểm tra và sửa chữa hoặc thay linh kiện lỗi miễn phí nếu đáp ứng điều kiện.</li>
+<li>Giao nhầm sản phẩm: báo trong 7 ngày; sản phẩm chưa sử dụng, đủ phụ kiện và còn bao bì gốc.</li>
+<li>Không nhận được hàng: thông báo trong vòng 30 ngày kể từ ngày gửi hàng.</li>
+</ul>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Hư hỏng vận chuyển báo sau 7 ngày mà không có video mở hộp hoặc xác nhận của đơn vị vận chuyển theo điều kiện chính sách.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">6</span> Các trường hợp không được bảo hành</summary>
+<div class="policy-content">
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH TRONG CÁC TRƯỜNG HỢP SAU:</div>
+<ul>
+<li>Tai nạn, rơi, va đập, sử dụng sai cách, cấp sai điện áp, vào nước hoặc chất lỏng, cháy nổ, lũ lụt, sét đánh, động đất, tai nạn giao thông hoặc các tác động bên ngoài/bất khả kháng.</li>
+<li>Sử dụng sai mục đích, lắp đặt hoặc vận hành không đúng hướng dẫn và cảnh báo.</li>
+<li>Tự ý tháo lắp, sửa chữa, sửa đổi chức năng hoặc sửa tại nơi không được ủy quyền.</li>
+<li>Tem, nhãn, số serial, tem chống nước hoặc tem bảo hành bị rách, tẩy xóa hay can thiệp.</li>
+<li>Không vệ sinh, bôi trơn hoặc bảo dưỡng định kỳ theo Maintenance Guide.</li>
+<li>Hư hỏng do phụ kiện bên thứ ba hoặc firmware không chính hãng/công cụ cập nhật không chính thức.</li>
+<li>Linh kiện tiêu hao và quà tặng như Hotend, Nozzle, Build Plate, tấm PEI, PTFE Tube, trừ ngoại lệ trong mục thời hạn bảo hành.</li>
+<li>Lỗi vận hành cơ bản: tắc Nozzle, cân bàn, bong bàn hoặc lỗi in do cài đặt.</li>
+<li>Trầy xước, hao mòn ngoại quan không ảnh hưởng hoạt động.</li>
+<li>Tiếp tục vận hành khi máy có khói, tiếng kêu bất thường hoặc linh kiện rơi rời.</li>
+<li>Hư hỏng do đóng gói không đúng khi gửi máy về trung tâm.</li>
+<li>Không có chứng từ mua hàng hợp lệ hoặc chứng từ giả mạo/chỉnh sửa.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">7</span> Quy trình bảo hành 6 bước</summary>
+<div class="policy-content">
+<ol>
+<li><strong>Liên hệ:</strong> Liên hệ 3D Thinking trước khi gửi hoặc mang máy đến; không tự tháo hoặc sửa khi chưa được hướng dẫn.</li>
+<li><strong>Cung cấp thông tin:</strong> Hóa đơn, phiếu bán hàng hoặc thông tin bảo hành; mô tả lỗi kèm hình ảnh, video hoặc file log nếu có.</li>
+<li><strong>Đóng gói:</strong> Sử dụng thùng và vật liệu đóng gói gốc. Hư hỏng do đóng gói không đúng cách có thể không được bảo hành.</li>
+<li><strong>Tiếp nhận:</strong> Bảo hành bắt đầu khi 3D Thinking nhận và kiểm tra sản phẩm thực tế; mã vận đơn không phải bằng chứng đã nhận hàng.</li>
+<li><strong>Xử lý:</strong> Lỗi cơ bản được xử lý ngay; lỗi chưa xác định được có thể cần kiểm tra thêm và làm việc với hãng.</li>
+<li><strong>Trả máy:</strong> Gửi qua Viettel Post hoặc khách nhận tại trung tâm; chi phí vận chuyển do khách hàng thanh toán.</li>
+</ol>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">8</span> Sử dụng, bảo dưỡng và an toàn</summary>
+<div class="policy-content">
+<ul>
+<li>Vận hành máy theo hướng dẫn và bảo dưỡng định kỳ: vệ sinh, bôi trơn, thay vật tư theo khuyến nghị.</li>
+<li>Khi có khói, tiếng kêu bất thường hoặc linh kiện rơi rời, tắt máy và liên hệ 3D Thinking.</li>
+<li>Không tự sửa máy khi chưa có hướng dẫn; chỉ sửa chữa theo hướng dẫn của kỹ thuật.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">9</span> Quy định riêng với sản phẩm laser</summary>
+<div class="policy-content">
+<ul>
+<li>Đọc kỹ hướng dẫn khởi động nhanh, điều khoản sử dụng và hướng dẫn an toàn laser, hóa chất, phòng cháy và an toàn điện.</li>
+<li>Vệ sinh đầu laser và các chi tiết xung quanh sau mỗi lần sử dụng; vệ sinh định kỳ hệ thống thông gió và xả khói.</li>
+</ul>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Đổi màu hoặc bám cặn do khói/nhiệt không ảnh hưởng chức năng; hư hỏng do vệ sinh sai, bỏ bê, thông gió kém hoặc khói tích tụ quá mức.</div>
+<div class="warranty-not-covered">AN TOÀN CHÁY NỔ: Chỉ sử dụng bình chữa cháy CO₂ tinh khiết đạt chứng nhận và còn hạn. Không sử dụng bình bột, bọt, nước hoặc loại khác; hư hỏng phát sinh không được bảo hành.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">10</span> Địa điểm bảo hành và liên hệ</summary>
+<div class="policy-content">
+<p><strong>Cơ sở Hà Nội:</strong> Số 946 Quang Trung, tổ dân phố 17, phường Yên Nghĩa, quận Hà Đông, TP Hà Nội.</p>
+<p><strong>Cơ sở TP.HCM:</strong> Số 9, Đường D20, Khu phố 6, phường Phước Long B, TP Thủ Đức, TP Hồ Chí Minh.</p>
+<p><strong>Tổng đài theo thông tin doanh nghiệp cung cấp:</strong> <a href="tel:19007451">19007451</a></p>
+<p><strong>Hỗ trợ kỹ thuật:</strong> <a href="tel:19007451">19007451 (Nhánh 2)</a></p>
+<p><strong>Email:</strong> <a href="mailto:info@3dthinking.vn">info@3dthinking.vn</a></p>
+<p><strong>Website:</strong> <a href="https://3dthinking.vn/" rel="noopener" target="_blank">3dthinking.vn</a></p>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">11</span> Thời gian hỗ trợ</summary>
+<div class="policy-content">
+<ul>
+<li>Thứ Hai đến Thứ Bảy: 8h00–17h00.</li>
+<li>Ngoài giờ hành chính: 18h00–21h00; phản hồi có thể chậm hơn.</li>
+<li>Ngừng tiếp nhận hỗ trợ vào Chủ nhật hằng tuần.</li>
+</ul>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">12</span> Khuyến nghị đào tạo</summary>
+<div class="policy-content">
+<p>3D Thinking khuyến nghị khách hàng tham gia khóa đào tạo sử dụng máy tương ứng để hạn chế lỗi in và hư hỏng không mong muốn.</p>
+<p><a href="https://3dthinking.vn/khoa-hoc/" rel="noopener" target="_blank">Xem khóa học tại 3D Thinking</a></p>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">13</span> Điều khoản chung</summary>
+<div class="policy-content">
+<ul>
+<li>3D Thinking có thể điều chỉnh chính sách theo thay đổi của nhà sản xuất hoặc hoạt động công ty.</li>
+<li>Nội dung thay đổi được công bố trên website ít nhất 14 ngày trước khi có hiệu lực, kèm ngày hiệu lực mới.</li>
+<li>Trong phạm vi pháp luật cho phép, 3D Thinking giữ quyền giải thích cuối cùng.</li>
+</ul>
+<p><strong>Xin trân trọng cảm ơn quý khách hàng!</strong></p>
+</div>
+</details>
+<h3 class="policy-heading">PHẦN II – THỜI HẠN BẢO HÀNH THEO DÒNG MÁY VÀ LINH KIỆN</h3>
+<div class="policy-note">
+      Thời hạn được tính từ ngày nhận sản phẩm. Danh mục “Không bảo hành” là nhóm linh kiện tiêu hao; nếu có lỗi sản xuất trong thời hạn bảo hành máy, việc thay thế sẽ được xem xét sau kiểm tra.
+    </div>
+<details class="policy-section">
+<summary><span class="section-number">1</span> Máy in 3D dòng X1</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH 12 THÁNG: Các linh kiện chính được liệt kê trong chính sách, gồm bộ chia AMS, bộ đệm sợi nhựa, quạt, cửa kính, cụm thanh carbon trục X, cáp bàn nhiệt, động cơ, bo mạch, màn hình, camera, dây đai, ăng-ten Wi-Fi, đèn LED và cụm bàn nhiệt.</div>
+<div class="warranty-limited">BẢO HÀNH 3 THÁNG: Cụm bộ đùn theo danh mục (không gồm cụm bánh răng bộ đùn và cảm biến sợi nhựa); nhóm Maker’s Supply.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Đầu nóng Bambu và các chi tiết, cụm bánh răng bộ đùn, bàn in, tấm thay bàn in, keo bàn in, dao cắt sợi, dao cạo, bộ lọc khí than hoạt tính, sợi nhựa và ống/đầu nối PTFE.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">2</span> Máy in 3D dòng P1</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH 12 THÁNG: Linh kiện chính như bộ chia AMS, bộ đệm sợi nhựa, quạt, cửa kính, màn hình, camera, dây đai, bo mạch, ăng-ten Wi-Fi, đèn LED, cảm biến bàn nhiệt, động cơ, cáp và cụm bàn nhiệt.</div>
+<div class="warranty-limited">BẢO HÀNH 3 THÁNG: Cụm bộ đùn theo danh mục, thẻ nhớ MicroSD 32 GB và nhóm Maker’s Supply.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Đầu nóng và các chi tiết, cụm bánh răng bộ đùn, bàn in, tấm thay bàn in, keo bàn in, ống PTFE/đầu nối, dao cắt sợi, dao cạo, bộ lọc than hoạt tính và sợi nhựa.</div>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">3</span> Các dòng máy in 3D Bambu Lab khác</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH TIÊU CHUẨN 12 THÁNG: Máy in 3D Bambu Lab và các bộ AMS/AMS lite/AMS 2 Pro/AMS HT thuộc phạm vi chính sách.</div>
+<div class="warranty-limited">BẢO HÀNH GIỚI HẠN 3–6 THÁNG: Chỉ áp dụng với những linh kiện được liệt kê riêng cho từng model trong danh mục chính thức.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Linh kiện tiêu hao và quà tặng như Hotend, Nozzle, Build Plate, tấm PEI, PTFE Tube, bộ lọc và gói hút ẩm, trừ ngoại lệ được chính sách nêu rõ.</div>
+<p>Để xác định chính xác thời hạn cho từng model và từng mã linh kiện, vui lòng xem bảng Phần II trên trang chính sách chính thức Bambu Lab.</p>
+</div>
+</details>
+<details class="policy-section">
+<summary><span class="section-number">4</span> Laser Module 10W/40W, Cutting Module và Bambu Lab R1</summary>
+<div class="policy-content">
+<div class="warranty-covered">ĐƯỢC BẢO HÀNH TIÊU CHUẨN 12 THÁNG: Laser Module 10W, Laser Module 40W, Cutting Module và máy laser Bambu Lab R1, theo điều kiện và danh mục linh kiện của chính sách.</div>
+<div class="warranty-not-covered">KHÔNG ĐƯỢC BẢO HÀNH: Hư hỏng do sử dụng sai cách, vệ sinh không đúng, thông gió kém, khói tích tụ, dùng bình chữa cháy không phù hợp hoặc không tuân thủ hướng dẫn an toàn.</div>
+</div>
+</details>
+<p class="muted">
+      Danh mục linh kiện Bambu Lab đầy đủ:
+      <a href="https://3dthinking.vn/chinh-sach-bao-hanh-bambu-lab-3d-thinking/" rel="noopener" target="_blank">trang chính sách chính thức</a>.
+    </p>
+</section>
+<!-- =====================================================
+       TAB 3: CREALITY
+       ===================================================== -->
+<section class="brand-panel" id="panel-creality"><div class="policy-note"><strong>Chính sách bảo hành Creality – 3D Thinking</strong><br/>Ngày hiệu lực: 10/10/2026 | Phiên bản: 01<br/><a href="https://3dthinking.vn/chinh-sach-bao-hanh-creality-3d-thinking/" rel="noopener" target="_blank">Mở chính sách đầy đủ trên website 3D Thinking</a></div><h3 class="policy-heading">PHẦN I – CHÍNH SÁCH VÀ QUY TRÌNH BẢO HÀNH</h3><details class="policy-section" open=""><summary><span class="section-number">1</span>Phạm vi áp dụng</summary><div class="policy-content"><p>Áp dụng cho tất cả khách hàng cá nhân và doanh nghiệp mua sản phẩm Creality do 3D Thinking (3dthinking.vn) phân phối và bán ra qua showroom và các kênh trực tuyến tại Việt Nam, gồm máy in 3D FFF/FDM, thiết bị in đa màu (dòng CFS, Nano…), máy in 3D resin, máy khắc laser, máy quét 3D và phụ kiện.</p><p><b>Không áp dụng:</b> sản phẩm Creality do đơn vị khác phân phối/bán; hàng nội địa Trung Quốc; hàng xách tay, mua ở nước ngoài hoặc qua kênh không chính thức (bao gồm Amazon, eBay, Temu). Các sản phẩm này theo chính sách của đơn vị bán; 3D Thinking không bảo hành xuyên khu vực và mọi dịch vụ sẽ tính phí sửa chữa, vận chuyển.</p><p>Chứng từ hợp lệ gồm hóa đơn, phiếu bán hàng hoặc thông tin bảo hành do 3D Thinking phát hành, kèm số serial (SN). Chính sách không làm giảm quyền lợi khách hàng theo pháp luật bảo vệ người tiêu dùng Việt Nam; nếu pháp luật quy định thời hạn dài hơn thì áp dụng thời hạn dài hơn.</p></div></details><details class="policy-section"><summary><span class="section-number">2</span>Thời hạn bảo hành</summary><div class="policy-content"><p>Thời hạn được tính từ ngày tiếp theo sau ngày khách hàng nhận sản phẩm.</p><ul><li><b>Bảo hành tiêu chuẩn 12 tháng:</b> linh kiện cốt lõi của máy chính thuộc máy in FFF, thiết bị in đa màu, máy in resin, máy khắc laser và máy quét 3D; không gồm linh kiện hao mòn, tiêu hao và quà tặng kèm.</li><li><b>Máy in FFF và thiết bị in đa màu:</b> linh kiện hao mòn 3 tháng.</li><li><b>Máy in resin:</b> màn hình in, khay resin (không gồm màng FEP) và bàn in 6 tháng; hạt LED 12 tháng.</li><li><b>Máy khắc laser:</b> UV Laser Module 12 tháng.</li><li><b>Máy quét 3D:</b> bảng hiệu chuẩn, cáp dữ liệu, đầu chuyển USB-C, hộp không dây, card mạng không dây và bi đánh dấu 6 tháng.</li><li><b>Linh kiện tiêu hao và quà tặng:</b> không bảo hành thông thường; nếu hạng mục bị loại trừ hỏng trong thời hạn bảo hành tiêu chuẩn và kiểm tra xác nhận lỗi vật liệu/sản xuất, 3D Thinking có thể thay thế hoặc khắc phục phù hợp. Quyết định căn cứ kết quả kiểm tra.</li><li>Thay linh kiện không khởi động lại thời hạn bảo hành. Thời gian sản phẩm nằm tại trung tâm bảo hành từ lúc tiếp nhận đến lúc trả lại được cộng thêm vào thời hạn.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">3</span>Điều kiện được bảo hành</summary><div class="policy-content"><p>Sản phẩm được bảo hành khi đáp ứng đầy đủ:</p><ul><li>Còn trong thời hạn bảo hành tương ứng và phát sinh lỗi trong điều kiện sử dụng bình thường, không do yếu tố con người.</li><li>Không tự ý tháo máy, sửa đổi hoặc lắp thêm ngoài hướng dẫn chính thức; không có lỗi do yếu tố con người khác.</li><li>Có chứng từ mua hàng hợp lệ của 3D Thinking và số serial (SN).</li><li>Cung cấp mô tả ngắn về lỗi kèm bằng chứng như hình ảnh, video, file log hoặc tài liệu liên quan.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">4</span>Hình thức bảo hành</summary><div class="policy-content"><p>3D Thinking sửa chữa sản phẩm hoặc thay thế linh kiện bị lỗi; không áp dụng đổi mới nguyên máy 1-1.</p><ul><li>Lỗi do nhà sản xuất trong thời hạn bảo hành: miễn phí linh kiện và công sửa chữa.</li><li>Lỗi do yếu tố con người khi máy còn hạn: miễn phí công sửa chữa; khách hàng thanh toán linh kiện thay thế. 3D Thinking báo chi phí trước và chỉ thực hiện khi khách hàng đồng ý.</li><li>Sản phẩm hết hạn hoặc ngoài phạm vi bảo hành: tính phí linh kiện và công, báo giá trước.</li><li>Trong trường hợp phù hợp, 3D Thinking có thể gửi linh kiện thay thế cùng hướng dẫn sửa chữa chính thức để khách hàng tự lắp đặt (DIY), với hỗ trợ kỹ thuật.</li><li>Linh kiện/thiết bị lỗi đã thay theo bảo hành có thể được yêu cầu gửi lại 3D Thinking để phân tích cùng nhà sản xuất; chi phí liên quan do 3D Thinking chịu.</li><li>3D Thinking có thể từ chối sửa chữa nếu chi phí sửa không còn hợp lý về kinh tế; khách hàng được tư vấn các lựa chọn.</li><li>Nếu kiểm tra không phát hiện lỗi, khách hàng chịu phí vận chuyển và có thể chịu phí kiểm tra đã được thông báo trước.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">5</span>Hư hỏng khi nhận hàng, giao nhầm, không nhận được hàng</summary><div class="policy-content"><p><b>Hư hỏng do vận chuyển hoặc không lên nguồn khi nhận:</b> quay video mở hộp và báo trong 3 ngày kể từ khi nhận. Nếu có thể, từ chối nhận kiện hoặc yêu cầu đơn vị vận chuyển xác nhận hư hỏng. 3D Thinking kiểm tra và sửa chữa/thay linh kiện lỗi miễn phí.</p><p><b>Giao nhầm hoặc sản phẩm khác rõ rệt mô tả:</b> báo trong 3 ngày kèm bằng chứng; sản phẩm phải chưa sử dụng, đầy đủ phụ kiện và còn bao bì gốc. 3D Thinking giao đúng sản phẩm.</p><p><b>Không nhận được đơn hàng:</b> báo trong vòng 10 ngày từ ngày gửi hàng. Hư hỏng vận chuyển báo sau 3 ngày mà không có video mở hộp hoặc xác nhận của đơn vị vận chuyển sẽ không được bảo hành.</p></div></details><details class="policy-section"><summary><span class="section-number">6</span>Các trường hợp không được bảo hành</summary><div class="policy-content"><ul><li>Sản phẩm đã hết hạn.</li><li>Không có chứng từ mua hàng, thông tin bảo hành hoặc số SN hợp lệ; chứng từ bị giả mạo/chỉnh sửa.</li><li>Số serial, tem nhà máy, phiếu bảo hành hoặc dấu nhận diện bị rách, sửa đổi hoặc có dấu hiệu can thiệp.</li><li>Lắp đặt, sử dụng hoặc vận hành sai hướng dẫn; chất lỏng xâm nhập.</li><li>Sản phẩm vận hành trong môi trường không đúng quy định.</li><li>Sử dụng quá mức/vượt tải hoặc bảo quản sai cách (ẩm, mốc, vào nước, ngâm nước…).</li><li>Va đập, cháy chập, vật lạ như nước/dầu xâm nhập và bất khả kháng như hỏa hoạn, lũ lụt, động đất, sét đánh, tai nạn giao thông.</li><li>Lỗi phần cứng/phần mềm do tự ý cài firmware bên thứ ba.</li><li>Tự ý sửa đổi/lắp thêm ngoài hướng dẫn hoặc sửa tại nơi không được ủy quyền.</li><li>Hư hỏng do linh kiện không chính hãng hoặc filament/resin kém chất lượng.</li><li>Phụ kiện/linh kiện lắp trên sản phẩm không tương thích; lỗi phụ kiện phát sinh do máy chính hỏng.</li><li>Hao mòn tự nhiên không ảnh hưởng chức năng; linh kiện tiêu hao và quà tặng, trừ ngoại lệ tại Mục 2.</li><li>Lỗi vận hành cơ bản như tắc Nozzle, cân bàn, bong bàn hoặc in lỗi do cài đặt.</li><li>Tiếp tục vận hành khi có dấu hiệu nguy hiểm như khói, tiếng kêu bất thường hoặc mùi khét.</li><li>Đóng gói không đúng cách khi gửi máy về 3D Thinking.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">7</span>Quy trình bảo hành</summary><div class="policy-content"><ol><li><b>Liên hệ:</b> liên hệ 3D Thinking trước khi gửi/mang máy đến; không tự tháo hoặc sửa khi chưa được hướng dẫn.</li><li><b>Cung cấp thông tin:</b> hóa đơn/phiếu bán hàng/thông tin bảo hành, số SN, mô tả lỗi và hình ảnh/video/log.</li><li><b>Đóng gói:</b> dùng bao bì gốc (thùng và vật liệu chèn); hư hỏng do không dùng bao bì gốc và phí vận chuyển do khách hàng chịu.</li><li><b>Tiếp nhận:</b> kiểm tra tại chỗ và xác nhận với khách hàng. Với hàng gửi vận chuyển, bảo hành chỉ bắt đầu khi 3D Thinking thực nhận và kiểm tra; mã vận đơn không chứng minh đã nhận.</li><li><b>Xử lý:</b> lỗi cơ bản được xử lý ngay; nếu chưa xác định được lỗi, kỹ thuật giữ máy để kiểm tra thêm và phối hợp Creality khi cần, thông báo thời gian kiểm tra/lịch trả máy.</li><li><b>Trả máy:</b> gửi qua Viettel Post hoặc khách nhận tại trung tâm; chi phí vận chuyển do khách hàng thanh toán.</li></ol></div></details><details class="policy-section"><summary><span class="section-number">8</span>Sử dụng, bảo dưỡng và an toàn</summary><div class="policy-content"><p>Sản phẩm cho từng khu vực có thể khác nhau; trước khi dùng cần bảo đảm phù hợp môi trường vận hành và điện áp địa phương (220V tại Việt Nam). Vận hành theo hướng dẫn, bảo dưỡng định kỳ (vệ sinh, bôi trơn, thay vật tư tiêu hao), giữ máy/vật liệu khô ráo, tránh ẩm, mốc và chất lỏng. Khi có dấu hiệu mất an toàn, ngắt điện và liên hệ 3D Thinking; không tự xử lý/sửa chữa. Hỏi 3D Thinking trước khi dùng linh kiện bên thứ ba. Với máy laser: đọc hướng dẫn an toàn, đeo kính bảo hộ đi kèm, đảm bảo thông gió và không để máy chạy không giám sát.</p></div></details><details class="policy-section"><summary><span class="section-number">9</span>Địa điểm bảo hành và liên hệ</summary><div class="policy-content"><p><b>Hà Nội:</b> 946 Quang Trung, tổ dân phố 17, phường Yên Nghĩa, quận Hà Đông, TP. Hà Nội.</p><p><b>TP.HCM:</b> Số 9, Đường D20, Khu phố 6, phường Phước Long B, TP. Thủ Đức, TP.HCM.</p><p><b>Hotline phản ánh dịch vụ:</b> 0938 245 599 / 0961 347 855<br/><b>Hỗ trợ kỹ thuật/vận hành:</b> 0961 989 895<br/><b>Website:</b> https://3dthinking.vn</p><p>Khuyến khích mang máy trực tiếp đến trung tâm để được hỗ trợ nhanh nhất.</p></div></details><details class="policy-section"><summary><span class="section-number">10</span>Thời gian hỗ trợ</summary><div class="policy-content"><ul><li>Thứ Hai – Thứ Bảy: 8h00–17h00.</li><li>Ngoài giờ hành chính: 18h00–21h00; có thể phản hồi chậm hơn.</li><li>Không tiếp nhận hỗ trợ vào Chủ nhật.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">11</span>Khuyến nghị đào tạo</summary><div class="policy-content"><p>Để hạn chế lỗi in và hư hỏng không mong muốn, 3D Thinking khuyến nghị khách hàng tham gia và hoàn thành khóa đào tạo sử dụng máy tương ứng tại <a href="https://3dthinking.vn/khoa-hoc/" rel="noopener" target="_blank">https://3dthinking.vn/khoa-hoc/</a>.</p></div></details><details class="policy-section"><summary><span class="section-number">12</span>Điều khoản chung</summary><div class="policy-content"><p>3D Thinking có thể điều chỉnh chính sách để phù hợp thay đổi của nhà sản xuất hoặc hoạt động công ty. Nội dung thay đổi được công bố trên 3dthinking.vn ít nhất 14 ngày trước khi có hiệu lực, kèm ngày hiệu lực mới. Trong phạm vi pháp luật cho phép, 3D Thinking giữ quyền giải thích cuối cùng đối với chính sách. Xin trân trọng cảm ơn quý khách hàng.</p></div></details><h3 class="policy-heading">PHẦN II – THỜI HẠN BẢO HÀNH THEO SẢN PHẨM VÀ LINH KIỆN</h3><div class="policy-note">Thời hạn tính từ ngày tiếp theo sau ngày khách hàng nhận sản phẩm. Linh kiện tiêu hao và quà tặng kèm không bảo hành; nếu hỏng do lỗi sản xuất khi máy chính còn hạn, việc thay thế do 3D Thinking xem xét và quyết định. Quy ước màu tại trang nguồn: xám = 12 tháng; vàng = 6 hoặc 3 tháng; hồng = không bảo hành.</div><details class="policy-section"><summary><span class="section-number">1</span>Máy in 3D FFF/FDM</summary><div class="policy-content"><p><strong>Máy chính – 12 tháng</strong></p><ul><li><b>Main components (excluding wear parts, consumable parts and free gifts)</b> — Linh kiện chính của máy, không gồm linh kiện hao mòn/tiêu hao và quà tặng</li></ul><p><strong>Linh kiện hao mòn – 3 tháng</strong></p><ul><li><b>Front Door Kit / Top Glass Panel</b> — Bộ cửa trước / tấm kính nắp trên</li><li><b>Hotend Kit (Nozzle Kit)</b> — Bộ đầu nóng (bộ Nozzle)</li><li><b>Extruder Kit (excluding extruder gear)</b> — Bộ đùn, không gồm bánh răng bộ đùn</li></ul><p><strong>Linh kiện tiêu hao – không bảo hành</strong></p><ul><li><b>Activated Carbon Filter</b> — Bộ lọc than hoạt tính</li><li><b>Desiccant</b> — Gói hút ẩm</li><li><b>Lubricating Grease</b> — Mỡ bôi trơn</li><li><b>Glue Stick</b> — Keo dán dạng thỏi</li><li><b>Cutter</b> — Dao cắt sợi nhựa</li><li><b>PTFE Tube + Tube Connector</b> — Ống PTFE + đầu nối ống</li><li><b>Magnetic Flexible Build Plate</b> — Bàn in từ tính dẻo</li><li><b>Nozzle</b> — Đầu phun</li><li><b>Extrusion Gear</b> — Bánh răng đùn</li><li><b>Hotend Silicone Sleeve</b> — Vỏ silicone bọc đầu nóng</li><li><b>Nozzle Wiper Adhesive Tape</b> — Băng dính bộ lau đầu phun</li><li><b>Other disposable items</b> — Vật dụng dùng một lần khác</li></ul><p><strong>Quà tặng kèm – không bảo hành</strong></p><ul><li><b>Storage Card / USB Flash Drive / Card Reader</b> — Thẻ nhớ / USB / đầu đọc thẻ</li><li><b>Wrench / Cutting Plier / Screwdriver / General Tool Kit</b> — Cờ lê / kìm cắt / tua vít / bộ dụng cụ chung</li><li><b>Scraper</b> — Dao cạo</li><li><b>Random backup functional gifts (Nozzle Wiper Module, Nozzle Wiper Adhesive Tape, Filament, Cutter Push Rod, Limit Buckle, etc.)</b> — Quà dự phòng ngẫu nhiên: mô-đun lau Nozzle, băng dính lau Nozzle, filament, thanh đẩy dao cắt, khóa giới hạn…</li><li><b>Cardboard Box / PE Zip Lock Bag</b> — Hộp carton / túi zip PE</li><li><b>Thermal Grease / Lubricating Grease</b> — Keo tản nhiệt / mỡ bôi trơn</li><li><b>Activated Carbon Filter / Desiccant / Glue Stick</b> — Bộ lọc than hoạt tính / gói hút ẩm / keo rắn</li><li><b>Nozzle / Cutter / PTFE Tube + Tube Connector / Pneumatic Connector</b> — Đầu phun / dao cắt / ống PTFE + đầu nối / đầu nối khí nén</li></ul></div></details><details class="policy-section"><summary><span class="section-number">2</span>Thiết bị in đa màu (CFS, Nano và dòng liên quan)</summary><div class="policy-content"><p><strong>Máy chính – 12 tháng</strong></p><ul><li><b>Main components (excluding wear parts, consumable parts and free gifts)</b> — Linh kiện chính, không gồm linh kiện hao mòn/tiêu hao và quà tặng</li></ul><p><strong>Linh kiện hao mòn – 3 tháng</strong></p><ul><li><b>Filament Feeding and Unloading Kit (including left and right components)</b> — Bộ nạp và rút sợi nhựa, gồm cụm trái/phải</li><li><b>Front / Rear Tray Drive Shaft Kit</b> — Bộ trục dẫn động khay trước/sau</li><li><b>Drive / Driven Gear (with Hub Outlet)</b> — Bánh răng chủ động/bị động kèm cửa ra bộ chia</li><li><b>Tool Head Hub Outlet Assembly</b> — Cụm cửa ra bộ chia trên đầu in</li><li><b>Filament Rack Kit</b> — Bộ giá treo cuộn nhựa</li></ul><p><strong>Linh kiện tiêu hao – không bảo hành</strong></p><ul><li><b>Desiccant</b> — Gói hút ẩm</li><li><b>PTFE Tube and Connectors</b> — Ống PTFE và đầu nối</li><li><b>Communication Module Rear Adhesive Tape</b> — Băng dính mặt sau mô-đun truyền thông</li><li><b>Cutter</b> — Dao cắt sợi nhựa</li></ul><p><strong>Quà tặng kèm – không bảo hành</strong></p><ul><li><b>Tool Kit (wrench, etc.)</b> — Bộ dụng cụ (cờ lê…)</li><li><b>PTFE Fixing Part</b> — Chi tiết cố định ống PTFE</li><li><b>USB Cable Fixing Part</b> — Chi tiết cố định cáp USB</li><li><b>Guide Sleeve</b> — Ống dẫn hướng</li><li><b>Lubricating Grease</b> — Mỡ bôi trơn</li><li><b>Cable Tie</b> — Dây rút</li><li><b>USB Drive</b> — USB</li><li><b>Paper Waste Bin</b> — Hộp giấy đựng nhựa thải</li></ul></div></details><details class="policy-section"><summary><span class="section-number">3</span>Máy in 3D resin</summary><div class="policy-content"><p><strong>Máy chính – 12 tháng</strong></p><ul><li><b>Main components (excluding wear parts, consumable parts and free gifts)</b> — Linh kiện chính, không gồm linh kiện hao mòn/tiêu hao và quà tặng</li></ul><p><strong>Linh kiện hao mòn – 12 tháng</strong></p><ul><li><b>LED Beads</b> — Hạt LED / nguồn sáng</li></ul><p><strong>Linh kiện hao mòn – 6 tháng</strong></p><ul><li><b>Print Screen</b> — Màn hình in LCD</li><li><b>Resin Vat (without release film)</b> — Khay resin, không gồm màng FEP</li><li><b>Build Plate</b> — Bàn in</li></ul><p><strong>Quà tặng kèm – không bảo hành</strong></p><ul><li><b>Printing Material (Resin)</b> — Vật liệu in resin</li><li><b>Release Film</b> — Màng FEP chống dính</li><li><b>Storage Card / USB Flash Drive / Card Reader</b> — Thẻ nhớ / USB / đầu đọc thẻ</li><li><b>Wrench / Scraper / Paper Funnel / Gloves and other tools</b> — Cờ lê / dao cạo / phễu giấy / găng tay và dụng cụ khác</li></ul></div></details><details class="policy-section"><summary><span class="section-number">4</span>Máy khắc laser</summary><div class="policy-content"><p><strong>Máy chính – 12 tháng</strong></p><ul><li><b>Main components (excluding wear parts, consumable parts and free gifts)</b> — Linh kiện chính, không gồm linh kiện hao mòn/tiêu hao và quà tặng</li></ul><p><strong>Linh kiện hao mòn – 12 tháng</strong></p><ul><li><b>UV Laser Module</b> — Mô-đun laser UV</li></ul><p><strong>Quà tặng kèm – không bảo hành</strong></p><ul><li><b>Filament Package</b> — Gói filament</li><li><b>Tool Kit</b> — Bộ dụng cụ</li><li><b>Honeycomb Board</b> — Tấm tổ ong</li><li><b>Engraver Lens</b> — Thấu kính máy khắc</li><li><b>Engraver Riser Column</b> — Cột nâng máy khắc</li><li><b>Smoke Tube</b> — Ống thoát khói</li><li><b>Storage Card / USB Flash Drive / Card Reader</b> — Thẻ nhớ / USB / đầu đọc thẻ</li><li><b>Lubricating Grease</b> — Mỡ bôi trơn</li><li><b>Fixed Focus Strip</b> — Thanh căn tiêu cự</li><li><b>Goggles</b> — Kính bảo hộ</li></ul></div></details><details class="policy-section"><summary><span class="section-number">5</span>Máy quét 3D</summary><div class="policy-content"><p><strong>Máy chính – 12 tháng</strong></p><ul><li><b>Main components (excluding wear parts, consumable parts and free gifts)</b> — Linh kiện chính, không gồm linh kiện hao mòn/tiêu hao và quà tặng</li></ul><p><strong>Linh kiện hao mòn – 6 tháng</strong></p><ul><li><b>Calibration Board</b> — Bảng hiệu chuẩn</li><li><b>Data Cable</b> — Cáp dữ liệu</li><li><b>USB-C Adapter</b> — Đầu chuyển USB-C</li><li><b>Wireless Box</b> — Hộp kết nối không dây</li><li><b>Wireless Network Card</b> — Card mạng không dây</li><li><b>Marker Ball</b> — Bi đánh dấu</li></ul><p><strong>Phụ kiện – không bảo hành</strong></p><ul><li><b>Phone Clip / Gimbal / Tripod</b> — Kẹp điện thoại / gimbal / chân máy tripod</li></ul><p><strong>Linh kiện tiêu hao – không bảo hành</strong></p><ul><li><b>Scanner Markers</b> — Điểm đánh dấu marker máy quét</li><li><b>Wrench</b> — Cờ lê</li><li><b>Quick-release Plate</b> — Đế tháo nhanh</li><li><b>Turntable</b> — Bàn xoay</li><li><b>Near-infrared Filter</b> — Kính lọc cận hồng ngoại</li></ul></div></details></section>
+<!-- =====================================================
+       TAB 4: ANYCUBIC
+       ===================================================== -->
+<section class="brand-panel" id="panel-anycubic"><div class="policy-note"><strong>Chính sách bảo hành Anycubic – 3D Thinking</strong><br/>Ngày hiệu lực: 10/10/2026 | Phiên bản: 01<br/><a href="https://3dthinking.vn/chinh-sach-bao-hanh-anycubic-3d-thinking/" rel="noopener" target="_blank">Mở chính sách đầy đủ trên website 3D Thinking</a></div><h3 class="policy-heading">PHẦN I – CHÍNH SÁCH VÀ QUY TRÌNH BẢO HÀNH</h3><details class="policy-section" open=""><summary><span class="section-number">1</span>Phạm vi áp dụng</summary><div class="policy-content"><p>Áp dụng cho khách hàng cá nhân/doanh nghiệp mua sản phẩm Anycubic do 3D Thinking phân phối qua showroom và kênh trực tuyến tại Việt Nam: máy in FDM, máy in resin LCD/DLP, thiết bị xử lý sau in và phụ kiện.</p><p><b>Không áp dụng:</b> sản phẩm do đơn vị khác phân phối; phiên bản nội địa Trung Quốc; hàng xách tay, mua ở nước ngoài hoặc qua kênh không chính thức; máy tặng và máy đã qua sử dụng. Sản phẩm mua từ đơn vị khác theo chính sách của đơn vị bán. Không bảo hành xuyên khu vực; dịch vụ tính phí sửa chữa và vận chuyển.</p><p>Máy phiên bản không dùng được tính năng Anycubic Cloud tại Việt Nam không được xem là lỗi chất lượng và không thuộc phạm vi bảo hành. Chỉ hóa đơn/phiếu bán hàng/thông tin bảo hành do 3D Thinking phát hành cùng mã SN trên máy có giá trị bảo hành. Chính sách không làm giảm quyền lợi theo luật bảo vệ người tiêu dùng; nếu pháp luật quy định thời hạn dài hơn thì áp dụng thời hạn dài hơn.</p></div></details><details class="policy-section"><summary><span class="section-number">2</span>Thời hạn bảo hành</summary><div class="policy-content"><p>Thời hạn bắt đầu từ ngày sản phẩm được giao cho khách hàng.</p><ul><li><b>12 tháng:</b> linh kiện chính của máy in FDM và máy in resin LCD/DLP, trừ dụng cụ, màng FEP, vật tư tiêu hao và linh kiện bảo hành giới hạn.</li><li><b>Máy FDM:</b> bàn nhiệt (Heated Bed), tấm kính (Glass Plate) 6 tháng; đầu in gồm hotend, cụm bộ đùn, bàn từ, dao cắt và bánh răng bộ đùn 3 tháng.</li><li><b>Máy resin:</b> màn hình LCD 6 hoặc 3 tháng tùy model; xem danh mục Phần II.</li><li><b>Phụ kiện mua lẻ:</b> đa số 3 tháng; AirPure 6 tháng; thời hạn độc lập với máy.</li><li><b>Không bảo hành:</b> Nozzle, ống PTFE, màng FEP/NFEP/ACF, ống bơm nhu động, than hoạt tính, vật phẩm tự tiêu hao khi dùng bình thường và dụng cụ đi kèm.</li><li>Linh kiện/phụ kiện thay thế chỉ được hưởng thời hạn còn lại của linh kiện gốc, không khởi động lại thời hạn. Thời gian bảo hành thực tế tại trung tâm từ ngày tiếp nhận đến ngày trả lại được cộng thêm vào thời hạn.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">3</span>Điều kiện được bảo hành</summary><div class="policy-content"><p>Phải đáp ứng tất cả điều kiện:</p><ul><li>Còn trong thời hạn bảo hành của sản phẩm/linh kiện.</li><li>Có chứng từ mua hàng của 3D Thinking (hóa đơn/phiếu bán hàng, mã đơn hàng).</li><li>Không hư hỏng do con người; không bị sửa đổi/can thiệp khi chưa được phép.</li><li>Vận hành đúng hướng dẫn sử dụng và điều khoản sử dụng.</li><li>Phụ kiện/thiết bị ngoại vi đáp ứng yêu cầu của sản phẩm, không gây hư hỏng.</li><li>Cung cấp mã SN và bằng chứng rõ ràng về lỗi bằng ảnh/video.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">4</span>Hình thức bảo hành</summary><div class="policy-content"><p>3D Thinking sửa chữa hoặc thay linh kiện lỗi; không đổi mới nguyên máy 1-1.</p><ul><li>Ưu tiên xử lý từ xa hoặc cập nhật phần mềm/firmware. Nếu không khắc phục được và lỗi thuộc bảo hành, thay linh kiện cần thiết miễn phí linh kiện và công sửa chữa.</li><li>Lỗi do người dùng/ngoài phạm vi: sửa chữa tính phí; báo chi phí trước và chỉ thực hiện khi khách đồng ý.</li><li>Trong trường hợp phù hợp, linh kiện thay thế có thể được gửi để khách tự lắp (DIY) theo hướng dẫn kỹ thuật; đây là hình thức bảo hành hợp lệ.</li><li>Nếu kiểm tra không phát hiện lỗi, khách hàng chịu phí vận chuyển và có thể chịu phí kiểm tra đã được thông báo trước.</li><li>Sau khi hết bảo hành, 3D Thinking tiếp tục hỗ trợ kỹ thuật miễn phí trọn đời sản phẩm; linh kiện và công sửa chữa tính phí.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">5</span>Hư hỏng khi nhận hàng, giao nhầm, không nhận được hàng</summary><div class="policy-content"><p><b>Hư hỏng do vận chuyển/không lên nguồn:</b> quay video mở hộp và báo trong 3 ngày từ ngày nhận; nếu có thể từ chối nhận hoặc yêu cầu đơn vị vận chuyển xác nhận. 3D Thinking kiểm tra, sửa chữa/thay linh kiện lỗi miễn phí.</p><p><b>Giao nhầm hoặc khác rõ rệt mô tả:</b> báo trong 3 ngày kèm bằng chứng; sản phẩm chưa dùng, đủ phụ kiện, còn bao bì gốc; 3D Thinking giao đúng sản phẩm.</p><p><b>Không nhận được hàng:</b> báo trong 10 ngày kể từ ngày gửi. Hư hỏng vận chuyển báo sau 3 ngày mà không có video mở hộp/xác nhận của đơn vị vận chuyển sẽ không được bảo hành.</p></div></details><details class="policy-section"><summary><span class="section-number">6</span>Các trường hợp không được bảo hành</summary><div class="policy-content"><ul><li>Sản phẩm hết hạn; sản phẩm tặng hoặc đã qua sử dụng.</li><li>Không có chứng từ/mã đơn hàng/biên nhận/hóa đơn hợp lệ hoặc chứng từ giả mạo, chỉnh sửa.</li><li>Tem nhãn, mã SN, dấu bảo hành có dấu hiệu can thiệp hoặc sửa đổi.</li><li>Lỗi do không theo hướng dẫn, lắp đặt/vận hành sai, sử dụng không đúng cách hoặc tự sửa đổi; gồm ẩm, mốc, quá tải và vật lạ (nước, dầu, cát…) xâm nhập.</li><li>Hư hỏng do phụ kiện/thiết bị ngoại vi không đáp ứng yêu cầu.</li><li>Hư hỏng do sửa chữa tại nơi không được ủy quyền.</li><li>Bất khả kháng: hỏa hoạn, động đất, lũ lụt, gió bão, sét đánh…</li><li>Phai màu, hao mòn tự nhiên, linh kiện tiêu hao và dụng cụ.</li><li>Màn hình LCD: rò rỉ resin, hỏng phim chống trầy, hư hỏng do con người/va đập.</li><li>Bàn nhiệt/bàn từ: trầy xước, rơi hoặc va đập.</li><li>Thùng rửa hỏng do con người, ví dụ còn resin đóng rắn bám trong thùng.</li><li>Máy phiên bản không dùng được Anycubic Cloud tại Việt Nam.</li><li>Lỗi vận hành cơ bản: tắc Nozzle, cân bàn, bong bàn hoặc in lỗi do cài đặt.</li><li>Tiếp tục chạy khi có khói, tiếng bất thường hoặc mùi khét.</li><li>Đóng gói không đúng cách khi gửi về 3D Thinking.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">7</span>Quy trình bảo hành</summary><div class="policy-content"><ol><li><b>Liên hệ:</b> liên hệ trước khi gửi/mang máy; không gửi khi chưa có xác nhận. Có thể tham khảo hướng dẫn sử dụng hoặc Anycubic Wiki cho lỗi đơn giản; không tự tháo/sửa khi chưa có hướng dẫn.</li><li><b>Thông tin:</b> hóa đơn/phiếu bán hàng/thông tin bảo hành, SN, mô tả lỗi, ảnh/video/file log nếu có.</li><li><b>Đóng gói:</b> dùng thùng và vật liệu gốc. Hư hỏng do không dùng bao bì gốc và chi phí vận chuyển do khách hàng chịu.</li><li><b>Tiếp nhận:</b> kiểm tra thực tế và xác nhận với khách hàng. Bảo hành chỉ bắt đầu khi 3D Thinking thực nhận và kiểm tra; mã vận đơn không phải bằng chứng đã nhận.</li><li><b>Xử lý:</b> lỗi cơ bản được xử lý ngay; nếu chưa xác định được lỗi, kỹ thuật giữ máy để kiểm tra sâu/phối hợp Anycubic khi cần và thông báo thời gian kiểm tra, lịch trả.</li><li><b>Trả máy:</b> gửi qua Viettel Post hoặc khách nhận tại trung tâm; khách hàng thanh toán phí vận chuyển.</li></ol></div></details><details class="policy-section"><summary><span class="section-number">8</span>Sử dụng, bảo dưỡng và an toàn</summary><div class="policy-content"><p>Vận hành theo hướng dẫn và bảo dưỡng định kỳ (vệ sinh, bôi trơn, thay vật tư tiêu hao). Giữ máy/vật liệu khô, tránh ẩm, mốc và vật lạ. Máy resin: kiểm tra khay resin và màng FEP trước mỗi lần in; thay màng hỏng kịp thời; lau resin tràn ngay để tránh rò xuống LCD. Khi mất an toàn, ngắt nguồn và liên hệ 3D Thinking; không tự xử lý/sửa máy. Chỉ dùng phụ kiện đáp ứng yêu cầu; hỏi 3D Thinking trước khi dùng phụ kiện/linh kiện bên thứ ba.</p></div></details><details class="policy-section"><summary><span class="section-number">9</span>Địa điểm bảo hành và liên hệ</summary><div class="policy-content"><p><b>Hà Nội:</b> 946 Quang Trung, tổ dân phố 17, phường Yên Nghĩa, quận Hà Đông, TP. Hà Nội.</p><p><b>TP.HCM:</b> Số 9, Đường D20, Khu phố 6, phường Phước Long B, TP. Thủ Đức, TP.HCM.</p><p><b>Hotline phản ánh dịch vụ:</b> 0938 245 599 / 0961 347 855<br/><b>Hỗ trợ kỹ thuật/vận hành:</b> 0961 989 895<br/><b>Website:</b> https://3dthinking.vn</p><p>Khuyến khích mang máy trực tiếp đến trung tâm để được hỗ trợ nhanh nhất.</p></div></details><details class="policy-section"><summary><span class="section-number">10</span>Thời gian hỗ trợ</summary><div class="policy-content"><ul><li>Thứ Hai – Thứ Bảy: 8h00–17h00.</li><li>Ngoài giờ hành chính: 18h00–21h00; có thể phản hồi chậm hơn.</li><li>Không tiếp nhận hỗ trợ vào Chủ nhật.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">11</span>Khuyến nghị đào tạo</summary><div class="policy-content"><p>3D Thinking khuyến nghị khách hàng tham gia và hoàn thành khóa đào tạo sử dụng máy tương ứng tại <a href="https://3dthinking.vn/khoa-hoc/" rel="noopener" target="_blank">https://3dthinking.vn/khoa-hoc/</a> để hạn chế lỗi in và hư hỏng không mong muốn.</p></div></details><details class="policy-section"><summary><span class="section-number">12</span>Điều khoản chung</summary><div class="policy-content"><p>3D Thinking có thể điều chỉnh chính sách theo thay đổi của nhà sản xuất/hoạt động công ty. Thay đổi được công bố trên 3dthinking.vn ít nhất 14 ngày trước khi có hiệu lực, kèm ngày hiệu lực mới. Trong phạm vi pháp luật cho phép, 3D Thinking giữ quyền giải thích cuối cùng. Xin trân trọng cảm ơn quý khách hàng.</p></div></details><h3 class="policy-heading">PHẦN II – THỜI HẠN BẢO HÀNH THEO SẢN PHẨM VÀ LINH KIỆN</h3><div class="policy-note">Thời hạn tính từ ngày sản phẩm được giao. Phụ kiện mua lẻ có thời hạn riêng, độc lập với máy. Linh kiện tiêu hao và dụng cụ không bảo hành; nếu lỗi sản xuất khi máy chính còn hạn, việc thay thế do 3D Thinking xem xét và quyết định.</div><details class="policy-section"><summary><span class="section-number">1</span>Máy in 3D FDM</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Other main components (except tools)</b> — Các linh kiện chính khác, trừ dụng cụ</li></ul><p><strong>Linh kiện chính – 6 tháng</strong></p><ul><li><b>Heated Bed</b> — Bàn nhiệt</li><li><b>Glass Plate</b> — Tấm kính bàn in</li></ul><p><strong>Linh kiện chính – 3 tháng</strong></p><ul><li><b>Print Head (including hotend)</b> — Đầu in (gồm hotend)</li><li><b>Extruder Assembly</b> — Cụm bộ đùn</li><li><b>Magnetic Platform</b> — Bàn in từ tính</li><li><b>Cutter</b> — Dao cắt sợi nhựa</li><li><b>Extruder Gear</b> — Bánh răng bộ đùn</li></ul><p><strong>Dụng cụ/tiêu hao – không bảo hành</strong></p><ul><li><b>Tools</b> — Dụng cụ đi kèm</li><li><b>Nozzle</b> — Đầu phun</li><li><b>Teflon Tube (PTFE Tube)</b> — Ống Teflon/ống PTFE</li></ul></div></details><details class="policy-section"><summary><span class="section-number">2</span>Máy in resin LCD/DLP</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Other main components (except tools and FEP film)</b> — Các linh kiện chính khác, trừ dụng cụ và màng FEP</li></ul><p><strong>Màn hình LCD – 6 tháng</strong></p><ul><li><b>Mono 2, Mono X 6Ks, Mono M5s, Mono M5, Mono M5s Pro, M7 Pro, M7, M7 Max, Mono 4, Mono 4 Ultra, P1</b> — Màn hình LCD của các model Mono 2, Mono X 6Ks, Mono M5s, Mono M5, Mono M5s Pro, M7 Pro, M7, M7 Max, Mono 4, Mono 4 Ultra, P1</li></ul><p><strong>Màn hình LCD – 3 tháng</strong></p><ul><li><b>M3 series, Mono 4K, Mono 6K, Mono X, Mono X2</b> — Màn hình LCD của dòng M3, Mono 4K, Mono 6K, Mono X, Mono X2</li></ul><p><strong>Dụng cụ/tiêu hao – không bảo hành</strong></p><ul><li><b>Tools</b> — Dụng cụ đi kèm</li><li><b>FEP Film</b> — Màng FEP</li></ul></div></details><details class="policy-section"><summary><span class="section-number">3</span>Phụ kiện mua lẻ</summary><div class="policy-content"><p><strong>Phụ kiện – 6 tháng</strong></p><ul><li><b>AirPure (activated carbon, man-made damage and disassembly not covered)</b> — Máy lọc khí AirPure; không bảo hành than hoạt tính, hư hỏng do con người hoặc tự tháo máy</li></ul><p><strong>Phụ kiện – 3 tháng</strong></p><ul><li><b>Cutter</b> — Dao cắt sợi nhựa</li><li><b>Print Head / Print Head Module</b> — Đầu in/mô-đun đầu in</li><li><b>Cable Holder</b> — Giá đỡ cáp</li><li><b>Purge Wiper</b> — Cần gạt xả nhựa thừa</li><li><b>Extruder Assembly</b> — Cụm bộ đùn</li><li><b>Heated Bed / Magnetic Platform (scratches, damage from drops or bumps not covered)</b> — Bàn nhiệt/bàn từ; không bảo hành trầy xước, rơi hoặc va đập</li><li><b>Motherboard (PCB board)</b> — Bo mạch chủ PCB</li><li><b>Cooling Fan</b> — Quạt làm mát</li><li><b>Belt</b> — Dây đai</li><li><b>Motor</b> — Động cơ</li><li><b>Camera</b> — Camera</li><li><b>Control Screen</b> — Màn hình điều khiển</li><li><b>LCD Screen (resin leakage, scratch-resistant film damage, man-made and collision damage not covered)</b> — Màn hình LCD; không bảo hành rò resin, hỏng phim chống trầy, hư hỏng do con người/va đập</li><li><b>UV Lamp Module / Lens</b> — Mô-đun đèn UV/thấu kính</li><li><b>Resin Vat / Smart Resin Vat (installation tools, FEP/NFEP/ACF film and screws not covered)</b> — Khay resin/khay resin thông minh; không gồm dụng cụ lắp, màng FEP/NFEP/ACF và ốc vít</li><li><b>Auto-Feed Unit</b> — Bộ nạp tự động</li><li><b>Washing Container (man-made damage, e.g. residual cured resin, not covered)</b> — Thùng rửa; không bảo hành hư hỏng do con người như resin đóng rắn bám lại</li><li><b>Print Platform (Dual-material, Hollow Steel)</b> — Bàn in loại Dual-material/Hollow Steel</li><li><b>Strain Gauge</b> — Cảm biến lực</li><li><b>Buffer Component</b> — Bộ đệm sợi nhựa</li><li><b>Material Break Detection Module</b> — Mô-đun phát hiện đứt vật liệu</li><li><b>Auto-fill Set</b> — Bộ châm resin tự động</li><li><b>Guide Rail</b> — Ray dẫn hướng</li><li><b>Ball Screw</b> — Vít me bi</li><li><b>Lead Screw (including motor)</b> — Vít me (kèm động cơ)</li><li><b>Anti-backlash Assembly</b> — Cụm chống rơ</li><li><b>Power Supply (switching power supply / power module)</b> — Bộ nguồn (nguồn tổ ong/mô-đun nguồn)</li></ul><p><strong>Linh kiện tiêu hao – không bảo hành</strong></p><ul><li><b>Nozzle</b> — Đầu phun</li><li><b>Teflon Tube (PTFE Tube)</b> — Ống Teflon/ống PTFE</li><li><b>Film (FEP / NFEP / ACF)</b> — Màng FEP/NFEP/ACF</li><li><b>Peristaltic Pump Tube</b> — Ống bơm nhu động</li></ul></div></details></section>
+<!-- =====================================================
+       TAB 5: PHROZEN
+       ===================================================== -->
+<section class="brand-panel" id="panel-phrozen"><div class="policy-note"><strong>Chính sách bảo hành Phrozen – 3D Thinking</strong><br/>Ngày hiệu lực: 10/10/2026 | Phiên bản: 01<br/><a href="https://3dthinking.vn/chinh-sach-bao-hanh-phrozen-3d-thinking/" rel="noopener" target="_blank">Mở chính sách đầy đủ trên website 3D Thinking</a></div><h3 class="policy-heading">PHẦN I – CHÍNH SÁCH VÀ QUY TRÌNH BẢO HÀNH</h3><details class="policy-section" open=""><summary><span class="section-number">1</span>Phạm vi áp dụng</summary><div class="policy-content"><p>Áp dụng cho khách hàng cá nhân/doanh nghiệp mua sản phẩm Phrozen do 3D Thinking phân phối qua showroom/kênh trực tuyến tại Việt Nam: máy in resin, thiết bị rửa và sấy (Wash &amp; Cure), phụ kiện và resin. Bảo hành chỉ dành cho người mua đầu tiên, không chuyển nhượng cho chủ sở hữu sau.</p><p><b>Không áp dụng:</b> sản phẩm do đơn vị khác phân phối; mua từ người bán/nền tảng không được ủy quyền; hàng đã qua sử dụng, phiên bản nội địa, hàng xách tay hoặc mua ở nước ngoài. Sản phẩm theo chính sách đơn vị bán; 3D Thinking không bảo hành xuyên khu vực và dịch vụ tính phí sửa chữa/vận chuyển. Máy in nha khoa Phrozen có chính sách nha khoa riêng, cung cấp khi khách yêu cầu.</p><p>Chứng từ hợp lệ gồm hóa đơn, phiếu bán hàng hoặc thông tin bảo hành do 3D Thinking phát hành, kèm SN. Chính sách không làm giảm quyền lợi theo pháp luật bảo vệ người tiêu dùng Việt Nam; nếu luật quy định thời hạn dài hơn thì áp dụng thời hạn dài hơn.</p></div></details><details class="policy-section"><summary><span class="section-number">2</span>Thời hạn bảo hành</summary><div class="policy-content"><p>Thời hạn bắt đầu từ ngày sản phẩm được giao khách hàng.</p><ul><li><b>Máy in resin:</b> thân máy (Main Body), LED Module, bàn in (Building Plate), trục Z và khay resin – 12 tháng.</li><li><b>Màn hình Mono-LCD:</b> 3 tháng. Màn hình RGB-LCD trên các dòng Transform/Shuffle đời cũ: không bảo hành.</li><li><b>Wash &amp; Cure, Air Purifier, Pump &amp; Fill, Sonic Saber:</b> linh kiện chính 12 tháng.</li><li><b>Sản phẩm refurbished (tân trang):</b> 3 tháng.</li><li><b>Không bảo hành tiêu hao:</b> resin, màng FEP/PFA (nFEP)/ACF, ống bơm nhu động, bộ lọc và vật tư tự tiêu hao khi dùng bình thường, trừ lỗi vật liệu/sản xuất.</li><li>Linh kiện thay thế bảo hành, linh kiện đã sửa và linh kiện mua thêm: nếu thiết bị/phụ kiện còn hạn thì hưởng thời hạn còn lại; nếu đã hết hạn thì linh kiện được bảo hành 1 tháng. Thay linh kiện không khởi động lại thời hạn của máy. Thời gian sản phẩm nằm tại trung tâm từ lúc tiếp nhận đến lúc trả lại được cộng thêm.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">3</span>Điều kiện được bảo hành</summary><div class="policy-content"><p>Phải đáp ứng đầy đủ:</p><ul><li>Còn thời hạn bảo hành tương ứng.</li><li>Lỗi do vật liệu hoặc quy trình sản xuất.</li><li>Người yêu cầu là người mua đầu tiên, có chứng từ mua hàng hợp lệ của 3D Thinking (mã đơn hàng) và SN.</li><li>Sản phẩm lắp đặt, vận hành theo hướng dẫn; không tự ý sửa đổi hoặc tháo rời.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">4</span>Hình thức bảo hành</summary><div class="policy-content"><p>Ưu tiên chẩn đoán và xử lý từ xa, gồm hướng dẫn cập nhật firmware khi cần. Nếu không xử lý được, 3D Thinking sửa chữa hoặc thay linh kiện lỗi; không đổi mới nguyên máy 1-1.</p><ul><li>Lỗi thuộc bảo hành: miễn phí linh kiện thay thế và công sửa chữa tại trung tâm.</li><li>Trong trường hợp phù hợp, linh kiện có thể gửi để khách tự lắp (DIY) theo hướng dẫn của kỹ thuật 3D Thinking.</li><li>Hư hỏng do người dùng, ngoài phạm vi hoặc hết hạn: tính phí sửa chữa/linh kiện, báo giá trước. Khách có thể đặt mua linh kiện thay thế Phrozen chính hãng qua 3D Thinking.</li><li>Nếu kiểm tra không phát hiện lỗi, khách chịu phí vận chuyển và có thể chịu phí kiểm tra đã được thông báo trước.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">5</span>Hư hỏng khi nhận hàng, giao nhầm, không nhận được hàng</summary><div class="policy-content"><p><b>Hư hỏng vận chuyển/không lên nguồn:</b> quay video mở hộp và báo trong 3 ngày từ ngày nhận; nếu có thể từ chối nhận hoặc yêu cầu đơn vị vận chuyển xác nhận. 3D Thinking kiểm tra và sửa/thay linh kiện lỗi miễn phí.</p><p><b>Giao nhầm/khác rõ rệt mô tả:</b> báo trong 3 ngày kèm bằng chứng; sản phẩm chưa sử dụng, đủ phụ kiện và còn bao bì gốc; 3D Thinking giao đúng sản phẩm.</p><p><b>Không nhận được hàng:</b> báo trong 10 ngày từ ngày gửi. Hư hỏng vận chuyển báo sau 3 ngày không có video mở hộp hoặc xác nhận đơn vị vận chuyển sẽ không được bảo hành.</p></div></details><details class="policy-section"><summary><span class="section-number">6</span>Các trường hợp không được bảo hành</summary><div class="policy-content"><ul><li>Sản phẩm hết hạn.</li><li>Không có chứng từ mua hàng rõ ràng hoặc người yêu cầu không phải người mua đầu tiên.</li><li>Mua từ người bán không được ủy quyền, nền tảng không chính thức hoặc hàng đã qua sử dụng.</li><li>Hư hỏng do con người: sử dụng/lắp đặt sai, sử dụng quá mức, điện áp bất thường, nước, lửa, tai nạn vận chuyển, rò resin và các tác động bên ngoài khác.</li><li>Tự ý thay đổi, sửa đổi hoặc tháo rời linh kiện không theo hướng dẫn chính thức.</li><li>Hư hỏng do đơn vị sửa chữa không được ủy quyền.</li><li>Hư hỏng do vận hành không theo hướng dẫn.</li><li>Hư hỏng phát sinh từ hỗ trợ kỹ thuật/hướng dẫn cài đặt không do Phrozen hoặc 3D Thinking cung cấp.</li><li>Linh kiện tiêu hao (resin, LCD ngoài hạn, màng FEP/PFA (nFEP)/ACF), trừ lỗi vật liệu/sản xuất.</li><li>Lỗi độ tin cậy/tương thích do linh kiện bên thứ ba không được phép.</li><li>LCD hỏng do rò resin, trầy xước, va đập hoặc đè nén.</li><li>Tiếp tục chạy khi có khói, tiếng bất thường hoặc mùi khét.</li><li>Đóng gói không đúng khi gửi máy về 3D Thinking.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">7</span>Ngừng hỗ trợ sản phẩm (EOS)</summary><div class="policy-content"><p>Sản phẩm đã đến hạn End of Support không còn nhận bản cập nhật, bản vá hoặc hỗ trợ kỹ thuật từ Phrozen. 3D Thinking chỉ có thể sửa chữa tính phí khi còn linh kiện tương thích.</p><p><b>Ngừng hỗ trợ từ 30/06/2023:</b></p><ul><li>Make, Make XL, Phrozen One</li><li>Shuffle 2018, Shuffle 2019, Shuffle 4K, Shuffle Lite, Shuffle XL 2019, Shuffle XL Lite</li><li>Transform Standard</li></ul><p>Danh sách EOS có thể được Phrozen cập nhật; 3D Thinking sẽ thông báo khi có thay đổi.</p></div></details><details class="policy-section"><summary><span class="section-number">8</span>Quy trình bảo hành</summary><div class="policy-content"><ol><li><b>Liên hệ:</b> liên hệ trước khi gửi/mang máy. 3D Thinking ưu tiên chẩn đoán từ xa, có thể hướng dẫn cập nhật firmware; có thể tham khảo hướng dẫn sử dụng và trung tâm hỗ trợ Phrozen. Không tự tháo/sửa khi chưa có hướng dẫn.</li><li><b>Cung cấp thông tin:</b> hóa đơn/phiếu bán hàng/thông tin bảo hành, SN, mô tả lỗi, ảnh/video/file log nếu có.</li><li><b>Đóng gói:</b> đóng đúng bao bì gốc (thùng carton và vật liệu chèn). Hư hỏng do không dùng bao bì gốc, chi phí vật liệu đóng gói thay thế và vận chuyển do khách hàng chịu.</li><li><b>Tiếp nhận:</b> kiểm tra thực tế và xác nhận với khách. Bảo hành chỉ bắt đầu khi 3D Thinking thực nhận và kiểm tra; mã vận đơn không chứng minh đã nhận.</li><li><b>Xử lý:</b> lỗi cơ bản xử lý ngay; nếu chưa xác định, giữ máy kiểm tra thêm và phối hợp Phrozen khi cần, thông báo thời gian kiểm tra/lịch trả.</li><li><b>Trả máy:</b> gửi qua Viettel Post hoặc khách nhận tại trung tâm; khách hàng thanh toán vận chuyển.</li></ol></div></details><details class="policy-section"><summary><span class="section-number">9</span>Sử dụng, bảo dưỡng và an toàn</summary><div class="policy-content"><p>Vận hành theo hướng dẫn và dùng đúng điện áp nguồn; đặt máy nơi khô ráo, thông thoáng, tránh nắng trực tiếp. Kiểm tra khay resin và màng FEP trước mỗi lần in, thay màng hỏng kịp thời; lau resin tràn ngay để tránh rò xuống LCD (hư hỏng do rò resin không bảo hành). Đeo găng tay khi thao tác với resin và tuân thủ hướng dẫn của resin/thiết bị rửa sấy. Khi có dấu hiệu mất an toàn, ngắt điện và liên hệ 3D Thinking; không tự xử lý/sửa máy. Hỏi 3D Thinking trước khi dùng linh kiện bên thứ ba.</p></div></details><details class="policy-section"><summary><span class="section-number">10</span>Địa điểm bảo hành và liên hệ</summary><div class="policy-content"><p><b>Hà Nội:</b> 946 Quang Trung, tổ dân phố 17, phường Yên Nghĩa, quận Hà Đông, TP. Hà Nội.</p><p><b>TP.HCM:</b> Số 9, Đường D20, Khu phố 6, phường Phước Long B, TP. Thủ Đức, TP.HCM.</p><p><b>Hotline phản ánh dịch vụ:</b> 0938 245 599 / 0961 347 855<br/><b>Hỗ trợ kỹ thuật/vận hành:</b> 0961 989 895<br/><b>Website:</b> https://3dthinking.vn</p><p>Khuyến khích mang máy trực tiếp đến trung tâm để được hỗ trợ nhanh nhất.</p></div></details><details class="policy-section"><summary><span class="section-number">11</span>Thời gian hỗ trợ</summary><div class="policy-content"><ul><li>Thứ Hai – Thứ Bảy: 8h00–17h00.</li><li>Ngoài giờ hành chính: 18h00–21h00; có thể phản hồi chậm hơn.</li><li>Không tiếp nhận hỗ trợ vào Chủ nhật.</li></ul></div></details><details class="policy-section"><summary><span class="section-number">12</span>Khuyến nghị đào tạo</summary><div class="policy-content"><p>3D Thinking khuyến nghị khách hàng tham gia và hoàn thành khóa đào tạo sử dụng máy tương ứng tại <a href="https://3dthinking.vn/khoa-hoc/" rel="noopener" target="_blank">https://3dthinking.vn/khoa-hoc/</a> để hạn chế lỗi in và hư hỏng không mong muốn.</p></div></details><details class="policy-section"><summary><span class="section-number">13</span>Điều khoản chung</summary><div class="policy-content"><p>3D Thinking có thể điều chỉnh chính sách theo thay đổi của nhà sản xuất hoặc hoạt động công ty. Thay đổi được công bố trên 3dthinking.vn ít nhất 14 ngày trước khi có hiệu lực, kèm ngày hiệu lực mới. Trong phạm vi pháp luật cho phép, 3D Thinking giữ quyền giải thích cuối cùng. Xin trân trọng cảm ơn quý khách hàng.</p></div></details><h3 class="policy-heading">PHẦN II – THỜI HẠN BẢO HÀNH THEO SẢN PHẨM VÀ LINH KIỆN</h3><div class="policy-note">Thời hạn tính từ ngày sản phẩm được giao đến khách hàng. Linh kiện tiêu hao không bảo hành, trừ trường hợp hư hỏng do lỗi vật liệu hoặc sản xuất. Quy ước màu tại trang nguồn: xám = 12 tháng; vàng = 6 hoặc 3 tháng; hồng = không bảo hành.</div><details class="policy-section"><summary><span class="section-number">1</span>Máy in resin dòng Sonic (Sonic Mighty Revo 14K, Sonic Mega 8K V2, Sonic Mighty 12K, Sonic Mega 8K S, Sonic Mini 8K S, Sonic Mighty 8K, Sonic Mini 8K, Sonic Mega 8K, Sonic Mighty 4K, Sonic Mini 4K, Sonic Mini)</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Main Body</b> — Thân máy</li><li><b>LED Module</b> — Mô-đun đèn LED</li><li><b>Building Plate</b> — Bàn in</li><li><b>Z-axis</b> — Trục Z</li><li><b>Resin Vat</b> — Khay resin</li></ul><p><strong>Màn hình Mono-LCD – 3 tháng</strong></p><ul><li><b>Mono-LCD</b> — Màn hình Mono-LCD</li></ul><p><strong>Tiêu hao – không bảo hành</strong></p><ul><li><b>FEP / PFA (nFEP) / ACF film</b> — Màng FEP/PFA (nFEP)/ACF</li></ul></div></details><details class="policy-section"><summary><span class="section-number">2</span>Dòng Transform và Shuffle</summary><div class="policy-content"><p><strong>Nhóm model</strong></p><ul><li><b>Transform Fast – Mono; Transform Normal – RGB; Shuffle XL Lite, Shuffle 4K, Shuffle XL 2019, Shuffle 2019, Shuffle XL 2018, Shuffle 2018, Shuffle Lite</b> — Các dòng/model Transform và Shuffle được liệt kê</li></ul><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Main Body</b> — Thân máy</li><li><b>LED Module</b> — Mô-đun đèn LED</li><li><b>Building Plate</b> — Bàn in</li><li><b>Z-axis</b> — Trục Z</li><li><b>Resin Vat</b> — Khay resin</li></ul><p><strong>LCD/tiêu hao – không bảo hành</strong></p><ul><li><b>RGB-LCD / Mono-LCD</b> — Màn hình RGB-LCD/Mono-LCD</li><li><b>FEP / PFA (nFEP) / ACF film</b> — Màng FEP/PFA (nFEP)/ACF</li></ul></div></details><details class="policy-section"><summary><span class="section-number">3</span>Bộ rửa và sấy Wash &amp; Cure Kit</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Washing Station – Motor</b> — Trạm rửa – động cơ</li><li><b>Washing Station – Main Body</b> — Trạm rửa – thân máy</li><li><b>Curing Station – LED Module</b> — Trạm sấy – mô-đun LED</li><li><b>Curing Station – Turntable</b> — Trạm sấy – bàn xoay</li><li><b>Curing Station – Main Body</b> — Trạm sấy – thân máy</li></ul></div></details><details class="policy-section"><summary><span class="section-number">4</span>Máy sấy UV: Cure Mega S, Cure Mega, Cure XL, Cure Luna, Cure</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>LED Module</b> — Mô-đun đèn LED</li><li><b>Turntable</b> — Bàn xoay</li><li><b>Main Body</b> — Thân máy</li></ul></div></details><details class="policy-section"><summary><span class="section-number">5</span>Đèn sấy UV Cure Beam</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>LED Module</b> — Mô-đun đèn LED</li><li><b>Main Body</b> — Thân máy</li></ul></div></details><details class="policy-section"><summary><span class="section-number">6</span>Máy rửa Wash Mega S</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Motor</b> — Động cơ</li><li><b>Main Body</b> — Thân máy</li></ul></div></details><details class="policy-section"><summary><span class="section-number">7</span>Máy rửa siêu âm Ultrasonic Cleaner</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Ultrasonic Transducers</b> — Đầu biến tử siêu âm</li><li><b>Heater</b> — Bộ gia nhiệt</li><li><b>Main Body</b> — Thân máy</li></ul></div></details><details class="policy-section"><summary><span class="section-number">8</span>Pump &amp; Fill – bộ cấp resin tự động</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Main Body</b> — Thân máy</li></ul><p><strong>Tiêu hao – không bảo hành</strong></p><ul><li><b>White Peristaltic Tube</b> — Ống bơm nhu động màu trắng</li></ul></div></details><details class="policy-section"><summary><span class="section-number">9</span>Máy lọc khí Phrozen Air Purifier</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Main Body</b> — Thân máy</li></ul><p><strong>Tiêu hao – không bảo hành</strong></p><ul><li><b>Filter</b> — Bộ lọc</li></ul></div></details><details class="policy-section"><summary><span class="section-number">10</span>Bộ nâng cấp 12K cho Sonic Mighty 8K</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Mainboard</b> — Bo mạch chính</li><li><b>LED Driver Board</b> — Bo mạch điều khiển LED</li></ul><p><strong>LCD – 3 tháng</strong></p><ul><li><b>LCD</b> — Màn hình LCD</li></ul></div></details><details class="policy-section"><summary><span class="section-number">11</span>Sonic Saber – dao cắt siêu âm</summary><div class="policy-content"><p><strong>Linh kiện chính – 12 tháng</strong></p><ul><li><b>Complete product</b> — Toàn bộ sản phẩm</li></ul></div></details><details class="policy-section"><summary><span class="section-number">12</span>Resin Phrozen</summary><div class="policy-content"><p><strong>Không bảo hành</strong></p><ul><li><b>Resin</b> — Resin/nhựa in</li></ul></div></details><details class="policy-section"><summary><span class="section-number">13</span>Sonic Mini 4K refurbished (tân trang)</summary><div class="policy-content"><p><strong>Toàn bộ linh kiện chính – 3 tháng</strong></p><ul><li><b>Mono-LCD</b> — Màn hình Mono-LCD</li><li><b>LED Module</b> — Mô-đun đèn LED</li><li><b>Building Plate</b> — Bàn in</li><li><b>Z-axis</b> — Trục Z</li><li><b>Resin Vat</b> — Khay resin</li><li><b>Main Body</b> — Thân máy</li></ul><p><strong>Tiêu hao – không bảo hành</strong></p><ul><li><b>FEP / PFA (nFEP) / ACF film</b> — Màng FEP/PFA (nFEP)/ACF</li></ul></div></details></section>
+<footer class="contact-footer">
+<div class="footer-company">CÔNG TY TNHH 3D THINKING</div>
+<p>Hỗ trợ thông tin chính sách và tiếp nhận yêu cầu bảo hành</p>
+<p>
+      Tổng đài:
+      <a href="tel:19007451"><strong>19007451</strong></a>
+        |  
+      Hỗ trợ kỹ thuật:
+      <a href="tel:19007451"><strong>Nhánh 2</strong></a>
+</p>
+<p><a href="https://3dthinking.vn/" rel="noopener" target="_blank">www.3dthinking.vn</a></p>
+</footer>
+</div>
+<script>
+(function () {
+  "use strict";
+
+  const tabs = document.querySelectorAll(".brand-tab");
+  const panels = document.querySelectorAll(".brand-panel");
+  const searchInput = document.getElementById("policySearch");
+  const clearButton = document.getElementById("clearSearch");
+  const emptyState = document.getElementById("emptyState");
+
+  let activeBrand = "xtool";
+
+  function setBrand(brand) {
+    activeBrand = brand;
+
+    tabs.forEach(function (tab) {
+      const isActive = tab.dataset.brand === brand;
+      tab.classList.toggle("active", isActive);
+      tab.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+
+    panels.forEach(function (panel) {
+      panel.classList.toggle("active", panel.id === "panel-" + brand);
+    });
+
+    searchInput.value = "";
+    resetSearch();
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      setBrand(tab.dataset.brand);
+    });
+  });
+
+  function getActivePanel() {
+    return document.getElementById("panel-" + activeBrand);
+  }
+
+  function resetSearch() {
+    const panel = getActivePanel();
+    if (!panel) return;
+
+    panel.querySelectorAll(".policy-section, .product-card").forEach(function (item) {
+      item.style.display = "";
+    });
+
+    panel.querySelectorAll(".policy-section").forEach(function (section) {
+      section.querySelectorAll(".policy-section").forEach(function (nested) {
+        nested.style.display = "";
+      });
+    });
+
+    emptyState.style.display = "none";
+  }
+
+  function runSearch() {
+    const panel = getActivePanel();
+    if (!panel) return;
+
+    const query = searchInput.value.trim().toLocaleLowerCase("vi");
+    const sections = Array.from(panel.querySelectorAll(".policy-section"));
+    let visibleCount = 0;
+
+    if (!query) {
+      resetSearch();
+      return;
+    }
+
+    sections.forEach(function (section) {
+      const text = section.innerText.toLocaleLowerCase("vi");
+      const matched = text.includes(query);
+      section.style.display = matched ? "" : "none";
+
+      if (matched) {
+        section.open = true;
+        visibleCount++;
+      }
+    });
+
+    panel.querySelectorAll(".policy-heading, .policy-note, .muted").forEach(function (item) {
+      item.style.display = "";
+    });
+
+    emptyState.style.display = visibleCount ? "none" : "block";
+  }
+
+  searchInput.addEventListener("input", runSearch);
+
+  clearButton.addEventListener("click", function () {
+    searchInput.value = "";
+    resetSearch();
+    searchInput.focus();
+  });
+
+  // Mở/đóng toàn bộ các mục bằng phím tắt:
+  // Alt + O: mở tất cả; Alt + C: đóng tất cả.
+  document.addEventListener("keydown", function (event) {
+    if (!event.altKey) return;
+
+    const panel = getActivePanel();
+    if (!panel) return;
+
+    if (event.key.toLowerCase() === "o") {
+      panel.querySelectorAll(".policy-section").forEach(function (item) {
+        if (item.style.display !== "none") item.open = true;
+      });
+    }
+
+    if (event.key.toLowerCase() === "c") {
+      panel.querySelectorAll(".policy-section").forEach(function (item) {
+        item.open = false;
+      });
+    }
+  });
+
+  // Khởi tạo tab mặc định.
+  setBrand("xtool");
+})();
+</script>
+</body>
+</html>
